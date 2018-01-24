@@ -44,7 +44,7 @@ namespace Kornea.Audio.DSP
             }
             else
             {                                     
-                if (reset_timer == latency)
+                if (reset_timer == 1)
                 {
                     freq_below_cutoff = true;
                     buffer.Reset();

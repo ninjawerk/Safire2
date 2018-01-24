@@ -28,7 +28,7 @@ namespace Kornea.Audio.DSP
 
         public override unsafe void DSPCallback(int handle, int channel, IntPtr buffer, int length, IntPtr user)
         {
-            if (IsBypassed)
+      if (IsBypassed || Player.Instance.NetStreamingConfigsLoaded) 
                 return;
 
             if (ChannelBitwidth == 16)
@@ -37,13 +37,11 @@ namespace Kornea.Audio.DSP
                 var data = (short*)buffer;
                 for (int a = 0; a < length / 2; a++)
                 {
-                    // your work goes here (16-bit sample data)
-                }
+                 }
             }
             else if (ChannelBitwidth == 32)
             {
-                // process the data 
-                var data = (float*)buffer;
+                 var data = (float*)buffer;
                 for (int a = 0; a < length / 4; a++)
                 {
                     data[a] = waveshape_distort(data[a]);
@@ -58,16 +56,12 @@ namespace Kornea.Audio.DSP
                     // your work goes here (8-bit sample data)
                 }
             }
-            // if you have calculated UI relevant data you might raise the event 
-            // else comment out the following line
-            RaiseNotification();
+             RaiseNotification();
         }
 
         public override void OnChannelChanged()
         {
-            // override this method if you need to react on channel changes 
-            // e.g. usefull, if an internal buffer needs to be reset etc.
-        }
+         }
 
         float waveshape_distort(float ins)
         {
@@ -77,7 +71,7 @@ namespace Kornea.Audio.DSP
 
         public override string ToString()
         {
-            return "My DSP";
+            return "WaveSharper";
         }
     }
 }

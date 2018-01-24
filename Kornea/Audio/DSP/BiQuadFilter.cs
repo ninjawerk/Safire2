@@ -184,7 +184,7 @@ namespace Kornea.Audio.DSP
             double cosw0 = Math.Cos(w0);
             double sinw0 = Math.Sin(w0);
             double alpha = sinw0/(2*q);
-            double a = Math.Sqrt(Math.Pow(10, dbGain/40)); // TODO: should we square root this value?
+	        double a = Math.Pow(10, dbGain/40);
 
             double b0 = 1 + alpha*a;
             double b1 = -2*cosw0;

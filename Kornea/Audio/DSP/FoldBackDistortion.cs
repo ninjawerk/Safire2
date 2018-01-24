@@ -28,7 +28,7 @@ namespace Kornea.Audio.DSP
 
         public override unsafe void DSPCallback(int handle, int channel, IntPtr buffer, int length, IntPtr user)
         {
-            if (IsBypassed)
+      if (IsBypassed || Player.Instance.NetStreamingConfigsLoaded) 
                 return;
 
             if (ChannelBitwidth == 16)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Threading;
+using Kornea.Audio.AudioCore;
 using Kornea.Audio.Interfaces;
 using Un4seen.Bass;
 
@@ -154,7 +155,7 @@ namespace Kornea.Audio.Reactor
                         if (_startVol - (float)jump > 0)
                         {
                             _startVol -= (float)jump;
-                            if (!_mywave.Muted)
+                            if (!Config.Muted)
                                 Bass.BASS_ChannelSetAttribute(_mywave.Handle, BASSAttribute.BASS_ATTRIB_VOL, _startVol);
                         }
                         else
@@ -173,7 +174,7 @@ namespace Kornea.Audio.Reactor
                         if (_startVol + (float)jump < _reachcap)
                         {
                             _startVol += (float)jump;
-                            if (!_mywave.Muted)
+							if (!Config.Muted)
                                 Bass.BASS_ChannelSetAttribute(_mywave.Handle, BASSAttribute.BASS_ATTRIB_VOL, _startVol);
                         }
                         else

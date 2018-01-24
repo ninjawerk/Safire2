@@ -68,7 +68,7 @@ namespace Kornea.Audio.DSP
         }
         public override unsafe void DSPCallback(int handle, int channel, IntPtr buffer, int length, IntPtr user)
         {
-            if (IsBypassed)
+      if (IsBypassed || Player.Instance.NetStreamingConfigsLoaded) 
                 return;
 
             if (ChannelBitwidth == 32) // 32-bit sample data
@@ -86,8 +86,8 @@ namespace Kornea.Audio.DSP
 
 
                     run_Pre_Filters(data, length, 4);
-                    iad.Run(data, data, length / 4);
-                    run_Post_Filters(data, length, 4);
+                    //iad.Run(data, data, length / 4);
+                    //run_Post_Filters(data, length, 4);
 
                     mix_with_DirectSignal(x, data, length, 4);
                 }

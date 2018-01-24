@@ -19,6 +19,7 @@ namespace Kornea.Audio.DSP
         private float out_right;
 
         private float width;
+		private BiQuadFilter bqf = BiQuadFilter.LowShelf(44000, 120, .5f, 2);
 
         public StereoEnhancer(int channel, int priority)
             : base(channel, priority, IntPtr.Zero)
@@ -29,13 +30,17 @@ namespace Kornea.Audio.DSP
         public float Width
         {
             get { return width; }
-            set { width = value; }
+	        set
+	        {
+		        width = value; 
+		   
+	        }
         }
 
 
         public override unsafe void DSPCallback(int handle, int channel, IntPtr buffer, int length, IntPtr user)
         {
-            if (IsBypassed)
+      if (IsBypassed || Player.Instance.NetStreamingConfigsLoaded) 
                 return;
 
             if (ChannelBitwidth == 16)
@@ -53,9 +58,9 @@ namespace Kornea.Audio.DSP
                 data = (float*) buffer;
                 for (int a = 0; a < length/4; a += 2)
                 {
-                    Widen(data[a], data[a + 1]);
-                    data[a] = out_left;
-                    data[a + 1] = out_right;
+					Widen(data[a], data[a + 1]);
+					data[a] = out_left;
+					data[a + 1] = out_right;
                 }
             }
             else
