@@ -1,0 +1,34 @@
+﻿<controls:MetroWindow
+    xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+     
+ 
+    x:Class="Safire.SettingsPages.SettingsWindow"
+    Title="Settings"
+    Height="543.375"
+	Closing="SettingsWindow_OnClosing"
+    Width="888.5" Background="Black" WindowStartupLocation="CenterScreen"  >
+    <controls:MetroWindow.GlowBrush>
+        <SolidColorBrush Color="{DynamicResource AccentColor}" />
+    </controls:MetroWindow.GlowBrush>
+    <controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>        
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />                 
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </controls:MetroWindow.Resources>
+
+
+    <Grid x:Name="grid" Background="{DynamicResource WhiteBrush}">
+        <Border  BorderBrush="{DynamicResource TextBrush}" HorizontalAlignment="Left" Width="235" BorderThickness="0,0,2,0">
+    		<TreeView x:Name="tVw" SelectedItemChanged="tVw_SelectedItemChanged" BorderThickness="0"/>
+    	</Border>
+    	<Frame x:Name="frame"   Margin="239,0,0,0" NavigationUIVisibility="Hidden" Source="/Safire 2.0;component/SettingsPages/default.xaml"/>
+
+
+    </Grid>
+</controls:MetroWindow>

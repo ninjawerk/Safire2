@@ -1,0 +1,50 @@
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Resources\Unknown.png
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Resources\TransBlackAccent.xaml
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\libvlc.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\libvlccore.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Sync.exe
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Sync.pdb
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Safire 2.0.exe
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\MahApps.Metro.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Bridge.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Kornea.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Xceed.Wpf.DataGrid.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Lpfm.LastFmScrobbler.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Bass.Net.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\taglib-sharp.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\System.Windows.Interactivity.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Safire 2.0.pdb
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\MahApps.Metro.pdb
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\MahApps.Metro.xml
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Bridge.pdb
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Kornea.pdb
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.csprojResolveAssemblyReference.cache
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.exe
+E:\Old\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.pdb
+F:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.exe
+F:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.exe
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Resources\Unknown.png
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Resources\TransBlackAccent.xaml
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\libvlc.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\libvlccore.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Sync.exe
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Sync.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Safire 2.0.exe
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\MahApps.Metro.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Bridge.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Kornea.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Xceed.Wpf.DataGrid.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Lpfm.LastFmScrobbler.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Bass.Net.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\taglib-sharp.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\System.Windows.Interactivity.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Safire 2.0.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\MahApps.Metro.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\MahApps.Metro.xml
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Bridge.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\bin\Debug\Kornea.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Sync\obj\Debug\Sync.csprojResolveAssemblyReference.cache

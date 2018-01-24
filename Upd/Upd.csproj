@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5B80D2D7-252F-43E4-A7B1-1DE6B488E7EB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Upd</RootNamespace>
+    <AssemblyName>Upd</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=0.0.0.999, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MahApps.Metro-master\MahApps.Metro\bin\Debug\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Definition.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="SupportSkinner.cs" />
+    <Compile Include="Web References\UpdateService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="zipCode\BZip2\BZip2.cs" />
+    <Compile Include="zipCode\BZip2\BZip2Constants.cs" />
+    <Compile Include="zipCode\BZip2\BZip2Exception.cs" />
+    <Compile Include="zipCode\BZip2\BZip2InputStream.cs" />
+    <Compile Include="zipCode\BZip2\BZip2OutputStream.cs" />
+    <Compile Include="zipCode\Checksums\Adler32.cs" />
+    <Compile Include="zipCode\Checksums\CRC32.cs" />
+    <Compile Include="zipCode\Checksums\IChecksum.cs" />
+    <Compile Include="zipCode\Checksums\StrangeCRC.cs" />
+    <Compile Include="zipCode\Core\FileSystemScanner.cs" />
+    <Compile Include="zipCode\Core\INameTransform.cs" />
+    <Compile Include="zipCode\Core\IScanFilter.cs" />
+    <Compile Include="zipCode\Core\NameFilter.cs" />
+    <Compile Include="zipCode\Core\PathFilter.cs" />
+    <Compile Include="zipCode\Core\StreamUtils.cs" />
+    <Compile Include="zipCode\Core\WindowsPathUtils.cs" />
+    <Compile Include="zipCode\Encryption\PkzipClassic.cs" />
+    <Compile Include="zipCode\Encryption\ZipAESStream.cs" />
+    <Compile Include="zipCode\Encryption\ZipAESTransform.cs" />
+    <Compile Include="zipCode\GZip\GZIPConstants.cs" />
+    <Compile Include="zipCode\GZip\GZipException.cs" />
+    <Compile Include="zipCode\GZip\GzipInputStream.cs" />
+    <Compile Include="zipCode\GZip\GzipOutputStream.cs" />
+    <Compile Include="zipCode\Lzw\LzwConstants.cs" />
+    <Compile Include="zipCode\Lzw\LzwException.cs" />
+    <Compile Include="zipCode\Lzw\LzwInputStream.cs" />
+    <Compile Include="zipCode\Main.cs" />
+    <Compile Include="zipCode\SharpZipBaseException.cs" />
+    <Compile Include="zipCode\Tar\InvalidHeaderException.cs" />
+    <Compile Include="zipCode\Tar\TarArchive.cs" />
+    <Compile Include="zipCode\Tar\TarBuffer.cs" />
+    <Compile Include="zipCode\Tar\TarEntry.cs" />
+    <Compile Include="zipCode\Tar\TarException.cs" />
+    <Compile Include="zipCode\Tar\TarHeader.cs" />
+    <Compile Include="zipCode\Tar\TarInputStream.cs" />
+    <Compile Include="zipCode\Tar\TarOutputStream.cs" />
+    <Compile Include="zipCode\Zip\Compression\Deflater.cs" />
+    <Compile Include="zipCode\Zip\Compression\DeflaterConstants.cs" />
+    <Compile Include="zipCode\Zip\Compression\DeflaterEngine.cs" />
+    <Compile Include="zipCode\Zip\Compression\DeflaterHuffman.cs" />
+    <Compile Include="zipCode\Zip\Compression\DeflaterPending.cs" />
+    <Compile Include="zipCode\Zip\Compression\Inflater.cs" />
+    <Compile Include="zipCode\Zip\Compression\InflaterDynHeader.cs" />
+    <Compile Include="zipCode\Zip\Compression\InflaterHuffmanTree.cs" />
+    <Compile Include="zipCode\Zip\Compression\PendingBuffer.cs" />
+    <Compile Include="zipCode\Zip\Compression\Streams\DeflaterOutputStream.cs" />
+    <Compile Include="zipCode\Zip\Compression\Streams\InflaterInputStream.cs" />
+    <Compile Include="zipCode\Zip\Compression\Streams\OutputWindow.cs" />
+    <Compile Include="zipCode\Zip\Compression\Streams\StreamManipulator.cs" />
+    <Compile Include="zipCode\Zip\FastZip.cs" />
+    <Compile Include="zipCode\Zip\IEntryFactory.cs" />
+    <Compile Include="zipCode\Zip\WindowsNameTransform.cs" />
+    <Compile Include="zipCode\Zip\ZipConstants.cs" />
+    <Compile Include="zipCode\Zip\ZipEntry.cs" />
+    <Compile Include="zipCode\Zip\ZipEntryFactory.cs" />
+    <Compile Include="zipCode\Zip\ZipException.cs" />
+    <Compile Include="zipCode\Zip\ZipExtraData.cs" />
+    <Compile Include="zipCode\Zip\ZipFile.cs" />
+    <Compile Include="zipCode\Zip\ZipHelperStream.cs" />
+    <Compile Include="zipCode\Zip\ZipInputStream.cs" />
+    <Compile Include="zipCode\Zip\ZipNameTransform.cs" />
+    <Compile Include="zipCode\Zip\ZipOutputStream.cs" />
+    <Page Include="Resources\TransBlackAccent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Welcome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Web References\UpdateService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\UpdateService\server.wsdl" />
+    <None Include="zipCode\ICSharpCode.SharpZLib.prjx" />
+    <Resource Include="ArknetGlyphs.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Resources\fxSuite.bin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Unknown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Shell32">
+      <Guid>{50A7E9B0-70EF-11D1-B75A-00A0C90564FE}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://www.lyracloud.com/Leyon/server.php%3fwsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\UpdateService\</RelPath>
+      <UpdateFromURL>http://www.lyracloud.com/Leyon/server.php%3fwsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Upd_UpdateService_LeyonService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="zipCode\ICSharpCode.SharpZLib.csproj" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

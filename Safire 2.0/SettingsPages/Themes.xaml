@@ -1,0 +1,61 @@
+﻿<settingsPages:SkinnedPage x:Class="Safire.SettingsPages.Themes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:settingsPages="clr-namespace:Safire.SettingsPages"
+      mc:Ignorable="d" 
+      d:DesignHeight="524" d:DesignWidth="730"
+	Title="Themes">
+
+    <Grid>
+		<Grid.Resources>
+			<ResourceDictionary>
+				<ResourceDictionary.MergedDictionaries>
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+				</ResourceDictionary.MergedDictionaries>
+			</ResourceDictionary>
+		</Grid.Resources>
+		<WrapPanel x:Name="accentColors" Margin="11,53.5,0,0" Height="130.5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="420">
+			<Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFE51400" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF60A917" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF119EDA" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFB400FF" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFFA6800" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFA4C400" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF008A00" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF00ABA9" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF1BA1E2" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF0050EF" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF6A00FF" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFAA00FF" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFF472D0" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFD80073" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFA20025" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFF0A30A" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FFE3C800" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF825A2C" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF6D8764" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF647687" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#FF76608A" Click="accentselected" Margin="2,2,0,0"/>
+            <Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="Sienna" Click="accentselected" Margin="2,2,0,0"/>
+		</WrapPanel>
+		<Border BorderBrush="{DynamicResource TextB}"  Height="60.533" Margin="11,383,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0,1"/>
+		<TextBlock  Foreground="{DynamicResource TextB}" Height="45.5" Margin="8,8,190.5,0" TextWrapping="Wrap" Text="Themes" VerticalAlignment="Top" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="21.333"/>
+		<TextBlock  Foreground="{DynamicResource TextB}" Height="25.433" Margin="13.5,33.067,0,0" TextWrapping="Wrap" Text="Select an accent color" VerticalAlignment="Top" Width="208.833" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment, VerticalAlignment" FontSize="13.333"/>
+		<Border BorderBrush="{DynamicResource TextB}" Margin="13.5,184,0,215" Width="346.833" HorizontalAlignment="Left" d:LayoutOverrides="HorizontalAlignment" BorderThickness="0,1,0,0">
+			<Grid Margin="0,10.5,0,0">
+				<TextBlock  Foreground="{DynamicResource TextB}" Height="25.433" TextWrapping="Wrap" Text="Select a base color" VerticalAlignment="Top" Width="208.833" HorizontalAlignment="Left" d:LayoutOverrides="VerticalAlignment" FontSize="13.333"/>
+				<WrapPanel x:Name="baseColors" Margin="0,29.433,0,0" HorizontalAlignment="Left" Width="103" d:LayoutOverrides="HorizontalAlignment">
+					<Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="White" Click="baseselected"/>
+					<Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#CC2F2F2F" Click="baseselected" Margin="2,0,0,0"/>
+					<Button Content="" Width="40" Height="40" VerticalAlignment="Top" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" BorderThickness="1" Background="#CC414141" Click="baseselected" Visibility="Collapsed"/>
+				</WrapPanel>
+				<TextBlock Foreground="{DynamicResource TextB}" HorizontalAlignment="Left" Margin="119,39.148,0,0" TextWrapping="Wrap" Text="Opaque" Width="115" VerticalAlignment="Top"/>
+				<TextBlock Foreground="{DynamicResource TextB}" HorizontalAlignment="Left" Margin="119,80,0,0" TextWrapping="Wrap" Text="Transparent" Width="115" VerticalAlignment="Top" Visibility="Hidden"/>
+        
+			</Grid>
+		</Border>
+        
+	</Grid>
+</settingsPages:SkinnedPage>

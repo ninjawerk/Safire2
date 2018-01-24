@@ -1,0 +1,23 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    x:Class="Safire.Controls.PlayerControl"
+    Height="62.5" Width="296" FontSize="21.333"  >
+
+
+    <Grid>
+
+        <StackPanel x:Name="LayoutRoot" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Button x:Name="btnStop" Content="" Width="35" Style="{DynamicResource MetroCircleButtonStyle}" Height="35" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="13.333" Click="btnStop_Click"   />
+            <Button x:Name="btnPrev" Content="" Width="45" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="13.333" Click="btnPrev_Click"  />
+            <Button x:Name="btnPlayPause" Content="" Width="60" Style="{DynamicResource MetroCircleButtonStyle}" Height="60" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="40"   Click="MainToggle"  />
+            <Button x:Name="btnNext" Content="" Width="45" Style="{DynamicResource MetroCircleButtonStyle}" Height="45" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="13.333" Click="btnNext_Click"  />
+            <Button x:Name="btnMute" Content="" Width="35" Style="{DynamicResource MetroCircleButtonStyle}" Height="35" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="13.333" Click="btnNext3_Click"  />
+        </StackPanel>
+    </Grid>
+</UserControl>

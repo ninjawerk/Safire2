@@ -1,0 +1,13 @@
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\bin\Debug\Tester.exe
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\bin\Debug\Tester.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.Properties.Resources.resources
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.exe
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Tester\bin\Debug\Tester.exe
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Tester\bin\Debug\Tester.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.Properties.Resources.resources
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.exe
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Tester\obj\Debug\Tester.pdb

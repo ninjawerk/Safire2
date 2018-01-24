@@ -1,0 +1,7 @@
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\bin\Debug\pla_def.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\bin\Debug\pla_def.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\bin\Debug\Bridge.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\bin\Debug\Bridge.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\obj\Debug\pla_def.csprojResolveAssemblyReference.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\obj\Debug\pla_def.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\pla_def\obj\Debug\pla_def.pdb

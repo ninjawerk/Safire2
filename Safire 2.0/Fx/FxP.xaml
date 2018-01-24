@@ -1,0 +1,106 @@
+﻿<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:Safire" xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" xmlns:Safire_Controls="clr-namespace:Safire.Controls" xmlns:Safire_Sound="clr-namespace:Safire.Sound"
+
+    x:Class="Safire.Fx.FxP"
+    x:Name="UserControl"
+    Loaded="ControlLoaded" Unloaded="ControlUnloaded" Height="942.617" Width="743"  >
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ScrollViewerControlTemplate1" TargetType="{x:Type ScrollViewer}">
+            <Grid x:Name="Grid" Background="{TemplateBinding Background}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="Corner" Grid.Column="1" Grid.Row="1" />
+                <ScrollContentPresenter x:Name="PART_ScrollContentPresenter"
+                                        CanContentScroll="{TemplateBinding CanContentScroll}"
+                                        CanHorizontallyScroll="False" CanVerticallyScroll="False"
+                                        ContentTemplate="{TemplateBinding ContentTemplate}"
+                                        Content="{TemplateBinding Content}" Grid.Column="0"
+                                        Margin="{TemplateBinding Padding}" Grid.Row="0" />
+                <ScrollBar x:Name="PART_VerticalScrollBar" AutomationProperties.AutomationId="VerticalScrollBar"
+                           Cursor="Arrow" Grid.Column="1" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0"
+                           Grid.Row="0" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"
+                           Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                           ViewportSize="{TemplateBinding ViewportHeight}" Style="{DynamicResource SimpleScrollBar}" />
+                <ScrollBar x:Name="PART_HorizontalScrollBar" AutomationProperties.AutomationId="HorizontalScrollBar"
+                           Cursor="Arrow" Grid.Column="0" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0"
+                           Orientation="Horizontal" Grid.Row="1"
+                           Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"
+                           Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}"
+                           ViewportSize="{TemplateBinding ViewportWidth}" Style="{DynamicResource SimpleScrollBar}" />
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Margin="0,0.575,0,0">
+
+        <ScrollViewer
+                      Style="{DynamicResource TransScrollViewerStyle}">
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top">
+        		<local:Equalizer x:Name="EQ" Height="154" Width="Auto" Loaded="EQ_Loaded"   />
+        		<local:Enhancer Margin="0,5,0,0" Width="Auto" x:Name="enh" Loaded="enh_Loaded" HorizontalAlignment="Left" VerticalAlignment="Top"   />
+        		<Grid Height="33" Width="748">
+        			<TextBlock FontSize="13.333" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="0,8,0,0"
+        				Text="    Effect" TextWrapping="Wrap" Width="181" HorizontalAlignment="Left" />
+        			<TextBlock FontSize="13.333" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="181,8,0,0"
+        				Text=" On/Off" TextWrapping="Wrap" Width="112" HorizontalAlignment="Left" />
+        			<TextBlock FontSize="13.333" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="293,8,0,0"
+        				Text="Preset" TextWrapping="Wrap" Width="157" HorizontalAlignment="Left" />
+        			<TextBlock FontSize="13.333" FontWeight="Bold" Foreground="#FFCCCCCC" Margin="450,8,354,0"
+        				Text="Mix" TextWrapping="Wrap" Visibility="Hidden" />
+        		</Grid>
+        		<Grid x:Name="Stack" FlowDirection="LeftToRight" Height="360" Margin="0"
+        				Width="726">
+        			<local:FxItem Caption="Chorus" Height="Auto" x:Name="chorusITM" OpacityMask="#F4312D2D"
+        				Toggled="ChorusToggle" Width="Auto" VerticalAlignment="Top" />
+        			<local:FxItem Caption="Reverb" Height="Auto" x:Name="ReverbITM" Toggled="ReverbToggled"
+        				Width="Auto" Margin="0,30.585,0,0" VerticalAlignment="Top" />
+        			<local:FxItem Caption="Echo" Height="Auto" x:Name="EchoITM" Toggled="EchoToggled" Width="Auto"
+        				Margin="0,61.17,0,0" VerticalAlignment="Top" />
+        			<local:FxItem Caption="I3DL2 Reverb" Height="Auto" x:Name="I3DL2ReverbITM"
+        				Toggled="I3Dl2ReverbToggled" Width="Auto" Margin="0,91.755,0,0"
+        				VerticalAlignment="Top" />
+        			<local:FxItem Caption="Gargle" Height="Auto" x:Name="GargleITM" Toggled="GargleToggled"
+        				Width="Auto" Margin="0,122.34,0,0" VerticalAlignment="Top" />
+        			<local:FxItem Caption="Flanger" Height="Auto" x:Name="FlangerITM" Toggled="FlangerToggled"
+        				Width="Auto" Margin="0,152.925,0,176.49" />
+        			<local:FxItem Caption="Compressor" Height="Auto" x:Name="CompressorITM" Toggled="CompressorToggled"
+        				Width="Auto" Margin="0,0,0,145.905" VerticalAlignment="Bottom" />
+        			<local:FxItem Caption="Distortion" Height="Auto" x:Name="DistortionITM" Toggled="DistortionToggled"
+        				Width="Auto" Margin="0,0,0,115.32" VerticalAlignment="Bottom" />
+        			<local:FxItem Caption="Auto Wah" Height="Auto" x:Name="AutoWahITM" Toggled="AutoWahToggled"
+        				Width="Auto" Margin="0,0,0,84.735" VerticalAlignment="Bottom" />
+        			<local:FxItem Caption="Allpass Filter" Height="Auto" x:Name="APFITM" Toggled="ApfToggled"
+        				Width="Auto" Margin="0,0,0,54.15" VerticalAlignment="Bottom" />
+        			<local:FxItem Caption="Phaser" Height="Auto" x:Name="PhaserITM" Toggled="PhaserToggled"
+        				Width="Auto" Margin="0,0,0,23.565" VerticalAlignment="Bottom" />
+
+        		</Grid>
+        		<Safire_Sound:DSPcol Margin="0,942.392,0.087,0" Grid.ColumnSpan="2" VerticalAlignment="Top"/>
+        		<Grid Height="942.392" Width="726" />
+        	</StackPanel>
+        </ScrollViewer>
+        <Grid Height="66" VerticalAlignment="Top" Background="{DynamicResource 60PercentOpactiy}" Visibility="Collapsed">
+            <Custom:MetroProgressBar x:Name="progressBarRecL" HorizontalAlignment="Left" Margin="25,26,0,25"
+                                     VerticalAlignment="Stretch" Width="144" Value="-279" Foreground="#FF31889F"
+                                     Maximum="32768" Background="#59353535" BorderBrush="{x:Null}" />
+            <TextBlock HorizontalAlignment="Left" Margin="8,25,0,26" TextWrapping="Wrap" Text="L" Width="26"
+                       Foreground="White" />
+            <Custom:MetroProgressBar x:Name="progressBarRecR" Margin="25,0,0,6" VerticalAlignment="Bottom" Value="-279"
+                                     Foreground="#FF31889F" Maximum="32768" Height="15" Background="#59353535"
+                                     BorderBrush="{x:Null}" HorizontalAlignment="Left" Width="144" />
+            <TextBlock HorizontalAlignment="Left" Margin="8,0,0,7" TextWrapping="Wrap" Text="R" Width="26"
+                       Foreground="White" Height="15" VerticalAlignment="Bottom" />
+            <TextBlock x:Name="labelRMS" Height="16" Margin="25,3,56,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                       Foreground="#FFE7E7E7" />
+            <TextBlock x:Name="LPeakHold" Margin="177,25.425,0,22" TextWrapping="Wrap" Foreground="#FFADADAD"
+                       HorizontalAlignment="Left" />
+            <TextBlock x:Name="RPeakHold" Margin="177,0,0,0" TextWrapping="Wrap" Foreground="#FFADADAD" Height="22"
+                       VerticalAlignment="Bottom" HorizontalAlignment="Left" />
+        </Grid>
+    </Grid>
+</UserControl>

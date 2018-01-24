@@ -1,0 +1,8 @@
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\bin\x86\Debug\Bridge.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\bin\x86\Debug\Bridge.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\bin\x86\Debug\MahApps.Metro.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\bin\x86\Debug\System.Windows.Interactivity.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\bin\x86\Debug\MahApps.Metro.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\obj\x86\Debug\Bridge.csprojResolveAssemblyReference.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\obj\x86\Debug\Bridge.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Bridge\obj\x86\Debug\Bridge.pdb

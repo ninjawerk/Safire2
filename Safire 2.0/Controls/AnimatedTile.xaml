@@ -1,0 +1,111 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+	mc:Ignorable="d"
+	x:Class="Safire.AnimatedTile"
+	x:Name="UserControl" Height="83" Width="85.5" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="29.333">
+	<UserControl.Resources>
+		<Storyboard x:Key="Glow">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#00000000">
+					<EasingColorKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingColorKeyFrame.EasingFunction>
+				</EasingColorKeyFrame>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#7E000000">
+					<EasingColorKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingColorKeyFrame.EasingFunction>
+				</EasingColorKeyFrame>
+			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="popIcon">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.595"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="unGlow">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#01000000">
+					<EasingColorKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseIn"/>
+					</EasingColorKeyFrame.EasingFunction>
+				</EasingColorKeyFrame>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#01000000">
+					<EasingColorKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseIn"/>
+					</EasingColorKeyFrame.EasingFunction>
+				</EasingColorKeyFrame>
+			</ColorAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="popIcon">
+				<EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.005"/>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Click">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[1].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#7E000000"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.3" Value="#00000000"/>
+			</ColorAnimationUsingKeyFrames>
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.2" Value="#80000000">
+					<EasingColorKeyFrame.EasingFunction>
+						<BackEase EasingMode="EaseOut"/>
+					</EasingColorKeyFrame.EasingFunction>
+				</EasingColorKeyFrame>
+			</ColorAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.StartPoint)" Storyboard.TargetName="rectangle">
+				<EasingPointKeyFrame KeyTime="0:0:0.2" Value="118.25,0"/>
+			</PointAnimationUsingKeyFrames>
+			<PointAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(LinearGradientBrush.EndPoint)" Storyboard.TargetName="rectangle">
+				<EasingPointKeyFrame KeyTime="0:0:0.2" Value="106.2,468"/>
+			</PointAnimationUsingKeyFrames>
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(GradientBrush.MappingMode)" Storyboard.TargetName="rectangle">
+				<DiscreteObjectKeyFrame KeyTime="0:0:0.2" Value="{x:Static BrushMappingMode.Absolute}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="rectangle">
+			<BeginStoryboard x:Name="unGlow_BeginStoryboard" Storyboard="{StaticResource Glow}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave">
+			<BeginStoryboard x:Name="unGlow_BeginStoryboard1" Storyboard="{StaticResource unGlow}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown" SourceName="rectangle">
+			<BeginStoryboard Storyboard="{StaticResource Click}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+
+	<Grid x:Name="LayoutRoot">
+		<Image x:Name="IMAGE"/>
+		<Rectangle x:Name="rectangle" Stroke="Black" StrokeThickness="0">
+			<Rectangle.Fill>
+				<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+					<LinearGradientBrush.RelativeTransform>
+						<TransformGroup>
+							<ScaleTransform CenterY="0.5" CenterX="0.5"/>
+							<SkewTransform CenterY="0.5" CenterX="0.5"/>
+							<RotateTransform CenterY="0.5" CenterX="0.5" Angle="17"/>
+							<TranslateTransform/>
+						</TransformGroup>
+					</LinearGradientBrush.RelativeTransform>
+					<GradientStop Color="#00000000" Offset="0"/>
+					<GradientStop Offset="1" Color="#00000000"/>
+				</LinearGradientBrush>
+			</Rectangle.Fill>
+		</Rectangle>
+		<TextBlock x:Name="popIcon" TextWrapping="Wrap" FontFamily="{Binding FontFamily, ElementName=UserControl}"  
+			HorizontalAlignment="Center" VerticalAlignment="Center"
+			FontSize="{Binding FontSize, ElementName=UserControl}" Opacity="0" Text="D" Margin="0"/>
+		<DockPanel LastChildFill="False">
+			<Border BorderBrush="#9D000000" BorderThickness="0" Background="#A3000000" Height="26.667" VerticalAlignment="Bottom" DockPanel.Dock="Top">
+				<TextBlock x:Name="Caption" Margin="7,-3,26.126,0" TextWrapping="Wrap" Text="Caption" VerticalAlignment="Center" FontSize="16" Foreground="#FFADADAD" FontFamily="Segoe UI Light" d:LayoutOverrides="Width"/>
+			</Border>
+		</DockPanel>
+	</Grid>
+</UserControl>

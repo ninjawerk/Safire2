@@ -1,0 +1,47 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Safire.DuoList"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+	<Grid x:Name="LayoutRoot">
+		<Grid x:Name="Duo" Margin="0,-1.332,0,0">
+ 
+			<DataGrid HeadersVisibility="None" x:Name="lst"  Margin="0,34.5,0,0" CanUserResizeRows="False" Background="{x:Null}" AutoGenerateColumns="False" SelectionChanged="lst_SelectionChanged" HorizontalAlignment="Left" Width="229.24" >
+    	
+				<DataGrid.Columns>
+					<DataGridTemplateColumn    Header="Artists">
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<TextBlock Text="{Binding Name}" Margin="10,0,0,0" TextTrimming="CharacterEllipsis" HorizontalAlignment="Stretch" />
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					 
+				</DataGrid.Columns>
+
+			</DataGrid>
+			<DataGrid HeadersVisibility="None"  x:Name="duotracks"  Margin="252.043,125.5,8,0" CanUserResizeRows="False" Background="{x:Null}" AutoGenerateColumns="False" PreviewMouseDoubleClick="duotracks_PreviewMouseDoubleClick" d:LayoutOverrides="GridBox" >
+    	
+				<DataGrid.Columns   >
+					<DataGridTemplateColumn    Header="Songs">
+						<DataGridTemplateColumn.CellTemplate   >
+							<DataTemplate>
+								<TextBlock Text="{Binding Title}" Margin="10,0,0,0" Background="{x:Null}" />
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+					 
+				</DataGrid.Columns>
+
+			</DataGrid>
+			<TextBlock HorizontalAlignment="Left" Height="37.5" Margin="252.043,96.633,0,0" TextWrapping="Wrap" Text="Songs" VerticalAlignment="Top" FontSize="16" d:LayoutOverrides="GridBox"/>
+			<TextBlock HorizontalAlignment="Left" Height="37.5" Margin="8,-1,0,0" TextWrapping="Wrap" Text="Artists" VerticalAlignment="Top" Width="68" FontSize="24" FontFamily="Segoe UI Light" FontWeight="Bold"/>
+			<TextBlock Margin="299.183,99.513,88.304,0" TextWrapping="Wrap" Text="by 12 Stones" VerticalAlignment="Top" FontSize="13.333" FontFamily="Segoe UI Light" d:LayoutOverrides="GridBox"/>
+		</Grid>
+	</Grid>
+</UserControl>

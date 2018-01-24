@@ -1,0 +1,49 @@
+﻿<settingsPages:SkinnedPage
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:settingsPages="clr-namespace:Safire.SettingsPages"
+      xmlns:Safire_Properties="clr-namespace:Safire.Properties"
+      xmlns:interactive="clr-namespace:Safire.Controls.Interactive"
+      xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+      x:Class="Safire.SettingsPages.File_Types"
+      mc:Ignorable="d"
+  	  Title="AppearanceBackground" d:DesignWidth="623" d:DesignHeight="461"  >
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                     <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+ 
+                </ResourceDictionary.MergedDictionaries>
+
+            </ResourceDictionary>
+        </Grid.Resources>
+        <StackPanel Margin="8,36.999,268.167,0" Orientation="Vertical" VerticalAlignment="Top">
+        	<Border BorderBrush="{DynamicResource TextB}" VerticalAlignment="Top" BorderThickness="0,0,0,1" Height="63.433">
+        		<TextBlock Foreground="{DynamicResource TextB}"  Margin="0,0,0,12.433" TextWrapping="Wrap"><Run Text="Select the file types you want to open with Safire."/><LineBreak/><Run/></TextBlock>
+        	</Border>
+        	<Border BorderBrush="{DynamicResource TextB}" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0,4,0,0">
+        		<StackPanel x:Name="pan" Margin="0,0,0,-1" Orientation="Vertical" d:LayoutOverrides="VerticalAlignment">
+        			<TextBlock Foreground="{DynamicResource TextB}" TextWrapping="Wrap" Width="208.833" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="8,0,0,0" Text="File Types" FontWeight="Bold" FontSize="13.333"/>
+                    <CheckBox Content=".mp3" Margin="17.185,4,196.056,0" Height="18" 
+					Foreground="{DynamicResource TextB}"/>
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".wma" Margin="17.185,4,196.056,0" Height="18"  />
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".flac" Margin="17.185,4,196.056,0" Height="18" />
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".wav" Margin="17.185,4,196.056,0" Height="18"  />
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".ogg" Margin="17.185,4,196.056,0" Height="18"  />
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".mp2" Margin="17.185,4,196.056,0" Height="18"  />
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".mp1" Margin="17.185,4,196.056,0" Height="18"  />
+                    <CheckBox Foreground="{DynamicResource TextB}" Content=".midi" Margin="17.185,4,196.056,6" Height="18"  />
+        		</StackPanel>
+        	</Border>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="41.999" Margin="8,8,0,8" Orientation="Horizontal" VerticalAlignment="Top">
+        	<TextBlock x:Name="d" Foreground="{DynamicResource TextB}" Margin="0" TextWrapping="Wrap" Text="" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="26.667" d:LayoutOverrides="Height" VerticalAlignment="Top"/>
+        	<TextBlock Foreground="{DynamicResource TextB}" Margin="8,0,0,0" TextWrapping="Wrap" Text="File Types" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="21.333" d:LayoutOverrides="Height" VerticalAlignment="Top"/>
+        
+        </StackPanel>
+        
+    </Grid>
+</settingsPages:SkinnedPage>

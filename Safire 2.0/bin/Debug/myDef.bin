@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<Definition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CodeName>Leyon</CodeName>
+  <Version>2.02</Version>
+  <Author>Deshan Alahakoon</Author>
+  <ReleasedDateTime>2014-11-22T01:26:59.0326136+05:30</ReleasedDateTime>
+  <PatchNotes>First Update Check</PatchNotes>
+  <URL>http://www.lyracloud.com/Leyon/update.zip</URL>
+</Definition>

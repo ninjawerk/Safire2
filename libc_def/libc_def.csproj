@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{39460393-C941-49F6-A807-642A9CB066CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>libc_def</RootNamespace>
+    <AssemblyName>libc_def</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Safire 2.0\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Safire 2.0\bin\Debug\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop, Version=1.0.168.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Safire 2.0, Version=1.6.12.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Safire 2.0.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\packages\Microsoft.Bcl.1.1.8\lib\net40\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Connectivity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Top Tracks\lcUI.xaml.cs">
+      <DependentUpon>lcUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Top Tracks\Plugin.cs" />
+    <Compile Include="Web\Deserializer.cs" />
+    <Compile Include="Web\Dev.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Artist.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Artist1.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Bio.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Formation.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Formationlist.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Image.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Link.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Links.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Rootobject.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Similar.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Stats.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Tag.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Tags.cs" />
+    <Compile Include="Web\LFM\ArtistInfo\Util.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Artist.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Attr.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Attr1.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Image.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Rootobject.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Streamable.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Toptracks.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Track.cs" />
+    <Compile Include="Web\LFM\ArtistTracks\Util.cs" />
+    <Compile Include="Web\LFM\HypedArtists\Artist.cs" />
+    <Compile Include="Web\LFM\HypedArtists\Artists.cs" />
+    <Compile Include="Web\LFM\HypedArtists\Attr.cs" />
+    <Compile Include="Web\LFM\HypedArtists\Image.cs" />
+    <Compile Include="Web\LFM\HypedArtists\Rootobject.cs" />
+    <Compile Include="Web\LFM\HypedArtists\Util.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Artist.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Attr.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Image.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Rootobject.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Streamable.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Track.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Tracks.cs" />
+    <Compile Include="Web\LFM\HypedTracks\Util.cs" />
+    <Compile Include="Web\LFM\TopArtists\Artists.cs" />
+    <Compile Include="Web\LFM\TopArtists\Attr.cs" />
+    <Compile Include="Web\LFM\TopArtists\Image.cs" />
+    <Compile Include="Web\LFM\TopArtists\Rootobject.cs" />
+    <Compile Include="Web\LFM\TopTracks\Artist.cs" />
+    <Compile Include="Web\LFM\TopTracks\Attr.cs" />
+    <Compile Include="Web\LFM\TopTracks\Image.cs" />
+    <Compile Include="Web\LFM\TopTracks\Rootobject.cs" />
+    <Compile Include="Web\LFM\TopTracks\Streamable.cs" />
+    <Compile Include="Web\LFM\TopTracks\Track.cs" />
+    <Compile Include="Web\LFM\TopTracks\Tracks.cs" />
+    <Compile Include="Web\LFM\TopTracks\Util.cs" />
+    <Compile Include="Web\TENWS\Artist.cs" />
+    <Compile Include="Web\TENWS\Biography.cs" />
+    <Compile Include="Web\TENWS\Common\License.cs" />
+    <Compile Include="Web\TENWS\Common\Status.cs" />
+    <Compile Include="Web\TENWS\Image.cs" />
+    <Compile Include="Web\TENWS\Song.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avina\Kornea.csproj">
+      <Project>{f9defdf9-cdd2-44bd-a1c0-4a99286d224a}</Project>
+      <Name>Kornea</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bridge\Bridge.csproj">
+      <Project>{4a1af146-40f1-4269-ab98-694b31115767}</Project>
+      <Name>Bridge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Top Tracks\lcUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

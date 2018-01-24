@@ -1,0 +1,16 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls"
+	mc:Ignorable="d"
+	x:Class="Safire.Controls.WebImage"
+	x:Name="UserControl"
+	d:DesignWidth="172" d:DesignHeight="158">
+
+	<Grid x:Name="LayoutRoot">
+ 		<TextBlock x:Name="txt" Margin="8" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="69.333" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" TextAlignment="Center"/>
+ 		<Image x:Name="img"   Visibility="Hidden" Stretch="UniformToFill"/>
+	</Grid>
+</UserControl>

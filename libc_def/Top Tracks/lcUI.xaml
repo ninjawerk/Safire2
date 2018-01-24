@@ -1,0 +1,165 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:topTracks="clr-namespace:libc_def.Top_Tracks"
+             xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="libc_def.Top_Tracks.lcUI"
+             mc:Ignorable="d" d:DesignWidth="1314.65" d:DesignHeight="667">
+    <UserControl.Resources>
+        <topTracks:ImgConverter x:Key="imgConverter" />
+        <DataTemplate x:Key="ArtistTemplate">
+        	<Grid Width="125" Background="{DynamicResource GrayBrush7}"  Margin="0,5,5,5"  >
+        		<StackPanel Orientation="Vertical" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="119">
+        			<Image Height="108" Margin="0" Source="{Binding IconImage, Converter={StaticResource imgConverter}, IsAsync=true}" Stretch="UniformToFill"  />
+        			<TextBlock Height="22" TextWrapping="Wrap" Text="{Binding name}" Width="Auto" FontFamily="Segoe UI" FontSize="13.333" TextAlignment="Center" Margin="0,4,0,0" TextTrimming="CharacterEllipsis"/>
+        			<TextBlock Height="22" TextWrapping="Wrap" Text="{Binding sub}" Width="Auto" FontFamily="Segoe UI" FontSize="13.333" TextAlignment="Center" Margin="0" TextTrimming="CharacterEllipsis"/>
+        		</StackPanel>
+        		<TextBlock TextWrapping="Wrap" Text="{Binding Available}" Width="Auto" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="16" Margin="8,8,3,0" VerticalAlignment="Top" ToolTip="Available in your library!"/>
+        	</Grid>
+        </DataTemplate>
+		      <DataTemplate x:Key="Track">
+         
+        		<TextBlock   TextWrapping="Wrap" Text="{Binding TrackName}" Width="Auto" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="12" Margin="0,0,0,0" VerticalAlignment="Top" ToolTip="Available in your library!"/>
+        	 
+        </DataTemplate>
+		<DataTemplate x:Key="SimilarTemplate">
+			<Grid Background="{DynamicResource GrayBrush7}" Margin="0,0,0,5" >
+
+				<StackPanel Orientation="Horizontal" Margin="8,7.166,0,7.167" HorizontalAlignment="Left" VerticalAlignment="Center" Width="166" Height="50">
+					<Image Height="50" Margin="0" Source="{Binding IconImage, Converter={StaticResource imgConverter}, IsAsync=true}" Stretch="UniformToFill" Width="50"  />
+					<TextBlock Height="22" Width="100" TextWrapping="Wrap" Text="{Binding name}" HorizontalAlignment="Left" FontFamily="Segoe UI" FontSize="13.333" TextAlignment="Left" Margin="3,0,0,0" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+
+				</StackPanel>
+
+			</Grid>
+		</DataTemplate>
+        <SolidColorBrush x:Key="ListBorder" Color="#828790"/>
+        <Style x:Key="WrapedBox" TargetType="{x:Type ListBox}">
+        	<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        	<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        	<Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        	<Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        	<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        	<Setter Property="VerticalContentAlignment" Value="Center"/>
+		 
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type ListBox}">
+        				<Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="1" SnapsToDevicePixels="true">
+        					<WrapPanel Height="Auto" Width="Auto" IsItemsHost="True" Orientation="Horizontal" HorizontalAlignment="Stretch"/>
+        				</Border>
+        				<ControlTemplate.Triggers>
+                            
+        					<Trigger Property="IsEnabled" Value="false">
+        						<Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        					</Trigger>
+        					<Trigger Property="IsGrouping" Value="false">
+        						<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+        <Style x:Key="WrapedTracks" TargetType="{x:Type ListBox}">
+			    <Style.Resources>
+            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                             Color="Transparent"/>
+        </Style.Resources>
+        	<Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        	<Setter Property="BorderBrush" Value="{StaticResource ListBorder}"/>
+        	<Setter Property="BorderThickness" Value="1"/>
+        	<Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        	<Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        	<Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        	<Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+        	<Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+        	<Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+        	<Setter Property="VerticalContentAlignment" Value="Center"/>
+        	<Setter Property="Template">
+        		<Setter.Value>
+        			<ControlTemplate TargetType="{x:Type ListBox}">
+        				<WrapPanel IsItemsHost="True" Orientation="Vertical"  />
+        				<ControlTemplate.Triggers>
+        					<Trigger Property="IsEnabled" Value="false"/>
+        					<Trigger Property="IsGrouping" Value="false">
+        						<Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+        					</Trigger>
+        				</ControlTemplate.Triggers>
+        			</ControlTemplate>
+        		</Setter.Value>
+        	</Setter>
+        </Style>
+
+    </UserControl.Resources>
+	<Grid Background="{DynamicResource WhiteBrush}" d:IsLocked="True">
+		<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" d:IsLocked="True">
+			<Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+				<StackPanel Margin="10,31,0,0" Orientation="Horizontal" VerticalAlignment="Top">
+					<StackPanel Orientation="Vertical" Width="314.907">
+						<TextBlock HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" Text="Top Tracks" VerticalAlignment="Top" Width="121.5" FontSize="24" Margin="0"/>
+						<ListBox x:Name="lst" HorizontalAlignment="Left" Width="314.907" Style="{DynamicResource WrapedBox}" BorderBrush="{x:Null}" ItemTemplate="{DynamicResource ArtistTemplate}" >
+                            <ListBox.Resources>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                            </ListBox.Resources>
+                        </ListBox>
+					</StackPanel>
+					<StackPanel Orientation="Vertical" Width="314.907">
+						<TextBlock HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" Text="Hyped Tracks" VerticalAlignment="Top" FontSize="24"/>
+						<ListBox x:Name="lst2" HorizontalAlignment="Left" Width="314.907" Style="{DynamicResource WrapedBox}" BorderBrush="{x:Null}" ItemTemplate="{DynamicResource ArtistTemplate}"/>
+					</StackPanel>
+					<StackPanel Orientation="Vertical" Width="314.907">
+						<TextBlock HorizontalAlignment="Left" Height="39" TextWrapping="Wrap" Text="Top Artists" VerticalAlignment="Top" Width="121.5" FontSize="24"/>
+						<ListBox x:Name="lst3" HorizontalAlignment="Left" Width="314.907" ItemTemplate="{DynamicResource ArtistTemplate}" Style="{DynamicResource WrapedBox}" BorderBrush="{x:Null}"/>
+					</StackPanel>
+					<StackPanel Orientation="Vertical" Width="314.907">
+						<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Hyped Artists" VerticalAlignment="Top" FontSize="24" Width="286.29" Height="39"/>
+						<ListBox x:Name="lst4" HorizontalAlignment="Left" Width="314.907" ItemTemplate="{DynamicResource ArtistTemplate}" Style="{DynamicResource WrapedBox}" BorderBrush="{x:Null}"/>
+					</StackPanel>
+				</StackPanel>
+			</Grid>
+		</ScrollViewer>
+		<Grid Background="{DynamicResource WhiteBrush}" x:Name="artPan" VerticalAlignment="Top" Visibility="Hidden" Margin="0,-3,0,0">
+			<StackPanel HorizontalAlignment="Left" Height="48" Margin="10,10,0,0" Orientation="Horizontal" VerticalAlignment="Top">
+				<Button x:Name="modeltemp" Style="{DynamicResource MetroCircleButtonStyle}" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+					Content="&#xEDD7;" Width="48" FontSize="24" Click="jumpToCharts"/>
+			</StackPanel>
+			<TextBlock x:Name="album_Copy" TextWrapping="Wrap" Text="Back" FontSize="26.667" FontFamily="Segoe UI Light" TextTrimming="CharacterEllipsis" Margin="62,15.723,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+			<Grid Margin="10,67,10,0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="277*"/>
+					<RowDefinition Height="23*"/>
+				</Grid.RowDefinitions>
+				<Border HorizontalAlignment="Left" Height="144" VerticalAlignment="Top" Width="144" BorderBrush="Black" BorderThickness="2">
+					<Image x:Name="imgArt" Stretch="UniformToFill"/>
+				</Border>
+				<TextBlock x:Name="artName" HorizontalAlignment="Left" Margin="157,3,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="18.667" FontWeight="Bold" Width="323.803" TextTrimming="CharacterEllipsis"/>
+				<TextBlock x:Name="artListens" HorizontalAlignment="Left" Margin="157,29.923,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="16" Width="323.803" TextTrimming="CharacterEllipsis"/>
+				<TextBlock x:Name="artTags" HorizontalAlignment="Left" Margin="157,59.753,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" FontSize="16" Width="323.205" Height="49.28"/>
+				<Path Data="M796,39.5 L796,284" Fill="#FFF4F4F5" HorizontalAlignment="Left" Margin="485.803,0,0,0" Stretch="Fill" Stroke="Black" Width="9" StrokeThickness="2" Grid.RowSpan="2"/>
+				<ListBox x:Name="similars" Height="244.5" Margin="0,182,0,0" VerticalAlignment="Top" ItemTemplate="{DynamicResource SimilarTemplate}" Style="{DynamicResource WrapedBox}" BorderThickness="0" HorizontalAlignment="Left" Width="480"/>
+				<TextBlock x:Name="artTags_Copy" HorizontalAlignment="Left" Margin="0,149.17,0,0" TextWrapping="Wrap" Text="Similar Artists" VerticalAlignment="Top" FontSize="16" Width="434.01" Height="32.83" FontWeight="Bold"/>
+				<Button x:Name="btnLibrary" Content="Bowse in Library" HorizontalAlignment="Left" Height="31" Margin="156,112,0,0" VerticalAlignment="Top" Width="120"/>
+			 
+				<TextBlock HorizontalAlignment="Left" Height="33" Margin="499.303,6,0,0" TextWrapping="Wrap" Text="Top Tracks" VerticalAlignment="Top" Width="126" FontSize="16" FontWeight="Bold"/>
+				<WrapPanel x:Name="tracks" Margin="499.803,36,10,0" Orientation="Vertical"/>
+			</Grid>
+
+		</Grid>
+		<Grid x:Name="grdError" Visibility="Hidden" d:IsHidden="True">
+			<TextBlock HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" Text="Cannot connect! :(" VerticalAlignment="Center"/>
+		</Grid>
+		<Grid x:Name="grdLoading" Background="{DynamicResource WhiteBrush}" d:IsHidden="True">
+			<TextBlock HorizontalAlignment="Center" Margin="0,43,0,0" TextWrapping="Wrap" Text="Loading" VerticalAlignment="Center" Padding="0,21,0,7"/>
+<!--			<Custom:ProgressRing HorizontalAlignment="Center" Height="50" Margin="0,-11,0,0" VerticalAlignment="Center" Width="50" IsActive="True"  Foreground="{DynamicResource AccentBrush}"/>-->
+		</Grid>
+	</Grid>
+</UserControl>

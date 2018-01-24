@@ -1,0 +1,30 @@
+﻿<settingsPages:SkinnedPage x:Class="Safire.SettingsPages.Background"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:settingsPages="clr-namespace:Safire.SettingsPages"
+      mc:Ignorable="d"
+  	  Title="AppearanceBackground" d:DesignWidth="623" d:DesignHeight="461"  >
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                     <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+ 
+                </ResourceDictionary.MergedDictionaries>
+
+            </ResourceDictionary>
+        </Grid.Resources>
+  
+        <Image x:Name="img" Stretch="UniformToFill" Margin="11,54,0,0" HorizontalAlignment="Left" Width="585" Height="323" VerticalAlignment="Top"/>
+        <Border BorderBrush="{DynamicResource TextB}"  Height="61" Margin="11,383,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" BorderThickness="0,0,0,1">
+            <StackPanel Width="346.833">
+                <Button BorderBrush="{DynamicResource AccentColorBrush}"    Content="Browse" Width="87.5" Height="35.1" VerticalAlignment="Top" d:LayoutOverrides="GridBox" FontSize="14.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" HorizontalAlignment="Left" BorderThickness="1" Click="Button_Click"/>
+                <TextBlock Foreground="{DynamicResource TextB}"   Height="25.433" Margin="0" TextWrapping="Wrap" Text="Select a picture from your computer" VerticalAlignment="Top" Width="208.833" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Border>
+        <TextBlock Foreground="{DynamicResource TextB}"    Height="46" Margin="8,8,191,0" TextWrapping="Wrap" Text="Background" VerticalAlignment="Top" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="21.333"/>
+
+    </Grid>
+</settingsPages:SkinnedPage>

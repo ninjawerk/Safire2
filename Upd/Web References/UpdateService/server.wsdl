@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.lyracloud.com/soap/LeyonService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://www.lyracloud.com/soap/LeyonService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.lyracloud.com/soap/LeyonService">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="GetDefRequest" />
+  <wsdl:message name="GetDefResponse">
+    <wsdl:part name="return" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="LeyonServicePortType">
+    <wsdl:operation name="GetDef">
+      <documentation>Get Update serialized xml definition</documentation>
+      <wsdl:input message="tns:GetDefRequest" />
+      <wsdl:output message="tns:GetDefResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LeyonServiceBinding" type="tns:LeyonServicePortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="GetDef">
+      <soap:operation soapAction="http://www.lyracloud.com/Leyon/server.php/GetDef" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="Leyon" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="Leyon" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LeyonService">
+    <wsdl:port name="LeyonServicePort" binding="tns:LeyonServiceBinding">
+      <soap:address location="http://www.lyracloud.com/Leyon/server.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

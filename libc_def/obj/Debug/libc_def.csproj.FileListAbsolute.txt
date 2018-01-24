@@ -1,0 +1,21 @@
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.csprojResolveAssemblyReference.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\Top Tracks\lcUI.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def_MarkupCompile.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def_MarkupCompile.lref
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Debug\libvlc.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Debug\libvlccore.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Debug\libc_def.dll.config
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Debug\libc_def.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Debug\libc_def.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.csproj.App.config
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\Top Tracks\lcUI.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.g.resources
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.csproj.App.config
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def.csprojResolveAssemblyReference.cache
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def_MarkupCompile.cache
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\Top Tracks\lcUI.g.cs
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\GeneratedInternalTypeHelper.g.cs
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\libc_def\obj\Debug\libc_def_MarkupCompile.lref

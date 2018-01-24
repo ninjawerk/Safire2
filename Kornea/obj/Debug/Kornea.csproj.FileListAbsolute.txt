@@ -1,0 +1,10 @@
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\obj\Debug\Kornea.Audio.Reactor.ReactorList.resources
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\obj\Debug\Kornea.csproj.GenerateResource.Cache
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\bin\Debug\libvlc.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\bin\Debug\libvlccore.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\bin\Debug\Kornea.dll.config
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\bin\Debug\Kornea.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\bin\Debug\Kornea.pdb
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\bin\Debug\Bass.Net.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\obj\Debug\Kornea.dll
+E:\Codes\Current\TurtleTheCat-leyon-6d17864ccb72\Kornea\obj\Debug\Kornea.pdb

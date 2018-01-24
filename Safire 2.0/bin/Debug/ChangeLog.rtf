@@ -1,0 +1,231 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 6.3.9600}\viewkind4\uc1 
+\pard\sa200\sl240\slmult1\b\f0\fs22\lang9 Changes coming from Safire 1.1 to Safire 2.02 Beta\line\b0 Everything was remade from scratch with the intention of building a better internal system. Longer codes were reduced by smarter algorithms, cyclomatic complexity was reduced by better practices. The new system is easier to update and fix due to its distributed architecture.\line This is my 7th music player. XD\line Class count : 483\par
+\b Newly added libraries:\par
+
+\pard{\pntext\f1\'B7\tab}{\*\pn\pnlvlblt\pnf1\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl240\slmult1\b0 Kornea\par
+{\pntext\f1\'B7\tab}Korneadspx32 [removed]\par
+{\pntext\f1\'B7\tab}Bridge\par
+{\pntext\f1\'B7\tab}libc_def\par
+{\pntext\f1\'B7\tab}pla_def\par
+{\pntext\f1\'B7\tab}LiSteex32\par
+
+\pard\sa200\sl240\slmult1\b ##################\par
+Change log\par
+##################\par
+
+\pard 
+{\pntext\f0 1.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl360\slmult1\b0 AudioWave and Player concepts\par
+{\pntext\f0 2.\tab}New DSP framework created\par
+{\pntext\f0 3.\tab}New reactor concept\par
+{\pntext\f0 4.\tab}Stereo enhancer created\par
+{\pntext\f0 5.\tab}BiQuad DSP started creating\par
+{\pntext\f0 6.\tab}Audio core AccessOverides created\par
+{\pntext\f0 7.\tab}Audio core Configs created\par
+{\pntext\f0 8.\tab}new bass booster\par
+{\pntext\f0 9.\tab}BEQA created\par
+{\pntext\f0 10.\tab}BiQuadFilter created\par
+{\pntext\f0 11.\tab}BQFilter extension created\par
+{\pntext\f0 12.\tab}EQ created\par
+{\pntext\f0 13.\tab}FoldBackDistortion created\par
+{\pntext\f0 14.\tab}IAD(integrate and dump) created\par
+{\pntext\f0 15.\tab}korneadspx32 created\par
+{\pntext\f0 16.\tab}k32Imports created\par
+{\pntext\f0 17.\tab}RingBuffer created\par
+{\pntext\f0 18.\tab}WaveShaper created\par
+{\pntext\f0 19.\tab}IAudioWave created\par
+{\pntext\f0 20.\tab}IReactor created\par
+{\pntext\f0 21.\tab}Fade reactor created\par
+{\pntext\f0 22.\tab}Pan Fade reactor created\par
+{\pntext\f0 23.\tab}BiQuad DSP ended creating\par
+{\pntext\f0 24.\tab}Blink Grid created\par
+{\pntext\f0 25.\tab}Blink grid renderer created\par
+{\pntext\f0 26.\tab}Hotkey hooking created\par
+{\pntext\f0 27.\tab}Glyphs created\par
+{\pntext\f0 28.\tab}player control bar created\par
+{\pntext\f0 29.\tab}mute problem fixed\par
+{\pntext\f0 30.\tab}volume bar added\par
+{\pntext\f0 31.\tab}library adder created\par
+{\pntext\f0 32.\tab}tracklist created\par
+{\pntext\f0 33.\tab}library internal panels created\par
+{\pntext\f0 34.\tab}Play panel created\par
+{\pntext\f0 35.\tab}artist image show created\par
+{\pntext\f0 36.\tab}Album image show created\par
+{\pntext\f0 37.\tab}playlist flyout created\par
+{\pntext\f0 38.\tab}drag drop extension created\par
+{\pntext\f0 39.\tab}dragdrop from explorer created\par
+{\pntext\f0 40.\tab}playlist extensions created\par
+{\pntext\f0 41.\tab}Fx UI created\par
+{\pntext\f0 42.\tab}Livetile control created\par
+{\pntext\f0 43.\tab}SQLite added\par
+{\pntext\f0 44.\tab}SQLite wrapper added\par
+{\pntext\f0 45.\tab}tables created\par
+{\pntext\f0 46.\tab}hyperlib databse created\par
+{\pntext\f0 47.\tab}appdata folder creation automated\par
+{\pntext\f0 48.\tab}transblack accent created\par
+{\pntext\f0 49.\tab}unknown album png created\par
+{\pntext\f0 50.\tab}Library load on demand created\par
+{\pntext\f0 51.\tab}FxHolder created\par
+{\pntext\f0 52.\tab}Fx settings created\par
+{\pntext\f0 53.\tab}EQ Octaves changed\par
+{\pntext\f0 54.\tab}BEQA Octaves changed\par
+{\pntext\f0 55.\tab}scrobller wrapper added\par
+{\pntext\f0 56.\tab}scrobler classes created\par
+{\pntext\f0 57.\tab}scrobler settings page made\par
+{\pntext\f0 58.\tab}download artist/album data page created\par
+{\pntext\f0 59.\tab}support skinner created\par
+{\pntext\f0 60.\tab}theme selector page created\par
+{\pntext\f0 61.\tab}wizard created\par
+{\pntext\f0 62.\tab}library added algorithm changed\lang1033\par
+{\pntext\f0 63.\tab}decoding stream disabled.\par
+
+\pard 
+{\pntext\f0 64.\tab}{\*\pn\pnlvlbody\pnf0\pnindent0\pnstart1\pndec{\pntxta.}}
+\fi-360\li720\sl360\slmult1\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520 Biquad processing unit complete\par
+{\pntext\f0 65.\tab}peaking eq processor reworked\par
+{\pntext\f0 66.\tab}finished eq \par
+{\pntext\f0 67.\tab}Added columns selecting\par
+{\pntext\f0 68.\tab}single instance & parameter passing\par
+{\pntext\f0 69.\tab}plugin selective initializing\par
+{\pntext\f0 70.\tab}mute button toggle\par
+{\pntext\f0 71.\tab}listbox highlight alignments\par
+{\pntext\f0 72.\tab}datagrid backs\par
+{\pntext\f0 73.\tab}live tile children enabled\par
+{\pntext\f0 74.\tab}file type assicoation//add UAC\par
+{\pntext\f0 75.\tab}home panel panning\par
+{\pntext\f0 76.\tab}home panel charts\par
+{\pntext\f0 77.\tab}song start volume burst fixed\par
+{\pntext\f0 78.\tab}xceed dgv library added\par
+{\pntext\f0 79.\tab}fx off\par
+{\pntext\f0 80.\tab}fx suite\par
+{\pntext\f0 81.\tab}def fx installer\par
+{\pntext\f0 82.\tab}updater\par
+{\pntext\f0 83.\tab}player update check\par
+{\pntext\f0 84.\tab}metro framework updated\par
+{\pntext\f0 85.\tab}reworked control templates\par
+{\pntext\f0 86.\tab}reworked data templates\par
+{\pntext\f0 87.\tab}livetile edited\par
+{\pntext\f0 88.\tab}psy aco bassbooster tuned\par
+{\pntext\f0 89.\tab}booster fx presets\par
+{\pntext\f0 90.\tab}ParamEQ tuned\par
+{\pntext\f0 91.\tab}Parameq presets\par
+{\pntext\f0 92.\tab}bcl async/await added\par
+{\pntext\f0 93.\tab}top charts auto collapse\par
+{\pntext\f0 94.\tab}Tuned Fx\par
+{\pntext\f0 95.\tab}Mute problem fixed\par
+{\pntext\f0 96.\tab}temporary removal tba theme\par
+{\pntext\f0 97.\tab}message boxes replaced by dialogs\par
+{\pntext\f0 98.\tab}flyout color binding fixed\par
+{\pntext\f0 99.\tab}Instance singularity created\par
+{\pntext\f0 100.\tab}Parameter passing created\par
+{\pntext\f0 101.\tab}Standby blinky created\par
+{\pntext\f0 102.\tab}Plugin manager created\par
+{\pntext\f0 103.\tab}Plugin core created\par
+{\pntext\f0 104.\tab}New animation extensions creted\par
+{\pntext\f0 105.\tab}Virtualizing wrap panel created\par
+{\pntext\f0 106.\tab}Virutalizing tile panel created\par
+{\pntext\f0 107.\tab}Fluid link created\par
+{\pntext\f0 108.\tab}taglib core created\par
+{\pntext\f0 109.\tab}Connectivity created\par
+{\pntext\f0 110.\tab}color converter created\par
+{\pntext\f0 111.\tab}serial data creted\par
+{\pntext\f0 112.\tab}seconds to time converter created\par
+{\pntext\f0 113.\tab}image downloader created\par
+{\pntext\f0 114.\tab}last fm core created\par
+{\pntext\f0 115.\tab}Cyclying concept  created\par
+{\pntext\f0 116.\tab}Cycler mod created\par
+{\pntext\f0 117.\tab}Recent songs updater created\par
+{\pntext\f0 118.\tab}Table queries created\par
+{\pntext\f0 119.\tab}Obervable models created\par
+{\pntext\f0 120.\tab}Table models created\par
+{\pntext\f0 121.\tab}Viewmodels created\par
+{\pntext\f0 122.\tab}my Library plugin created\par
+{\pntext\f0 123.\tab}Love control created <-lol\par
+{\pntext\f0 124.\tab}Enumeration container created\par
+{\pntext\f0 125.\tab}Artworks mod created\par
+{\pntext\f0 126.\tab}volume response curve changed to quintic from linear\par
+{\pntext\f0 127.\tab}ui framework window color binding changed\par
+{\pntext\f0 128.\tab}ui frame  work titlebar changed\par
+{\pntext\f0 129.\tab}ui framework flyout changed\par
+{\pntext\f0 130.\tab}biquad peaking eq edited\par
+{\pntext\f0 131.\tab}scrobbler username retrieval created\par
+{\pntext\f0 132.\tab}scrobbler realname retrieval created\par
+{\pntext\f0 133.\tab}async dialogs for scrobbler added\par
+{\pntext\f0 134.\tab}dragdrop box for library created\par
+{\pntext\f0 135.\tab}errors in recent songs updates fixed\par
+{\pntext\f0 136.\tab}auto adding songs to library on play fixed\par
+{\pntext\f0 137.\tab}caching images and thumbnails for topcharts made\par
+{\pntext\f0 138.\tab}fx binary preset installer made\par
+{\pntext\f0 139.\tab}fx installer errors fixed\par
+{\pntext\f0 140.\tab}intro wizard procedure changed\par
+{\pntext\f0 141.\tab}intro wizard beta key algorithm changed\par
+{\pntext\f0 142.\tab}follow us buttons created\par
+{\pntext\f0 143.\tab}donate button created\par
+{\pntext\f0 144.\tab}default page for settings created\par
+{\pntext\f0 145.\tab}quartic volume curve created\par
+{\pntext\f0 146.\tab}timeline frames per second control added\par
+{\pntext\f0 147.\tab}hardware performance tier calculations added\par
+{\pntext\f0 148.\tab}max texture resoulution added\par
+{\pntext\f0 149.\tab}settings windows singleton instanced\par
+{\pntext\f0 150.\tab}parallel processing concepts complexity reduced\par
+{\pntext\f0 151.\tab}multi threaded search enhanced\par
+{\pntext\f0 152.\tab}library song adding algoithm changed\par
+{\pntext\f0 153.\tab}SQLite conflicts minimized\par
+{\pntext\f0 154.\tab}Playlist extensions for saving and opening added\par
+{\pntext\f0 155.\tab}#G# filenaming added to playlists\par
+{\pntext\f0 156.\tab}playlists moved to music\\safire\par
+{\pntext\f0 157.\tab}recent binary file created\par
+{\pntext\f0 158.\tab}updater UAC elevated\par
+{\pntext\f0 159.\tab}updater definition converted to xml\par
+{\pntext\f0 160.\tab}Leyon webservice created [not implemented]\par
+{\pntext\f0 161.\tab}player version calculation method created\par
+{\pntext\f0 162.\tab}compression utility intergrated without libraries\par
+{\pntext\f0 163.\tab}korneadsp32 removed\par
+{\pntext\f0 164.\tab}3beq recoded in C#\par
+{\pntext\f0 165.\tab}k32imports removed\par
+{\pntext\f0 166.\tab}BEQA modified with 3beq code.\par
+{\pntext\f0 167.\tab}Kornea new output mode added\par
+{\pntext\f0 168.\tab}NetStream output mode added.\par
+{\pntext\f0 169.\tab}System dual active modes created [NetStream and Normal]\par
+{\pntext\f0 170.\tab}BufferProgress notifier created\par
+{\pntext\f0 171.\tab}Good Buffer notifier created\par
+{\pntext\f0 172.\tab}Player control netstream mode created\par
+{\pntext\f0 173.\tab}hide nowplaying on radio\par
+{\pntext\f0 174.\tab}hide standby blinky on radio\par
+{\pntext\f0 175.\tab}read ICY tags\par
+{\pntext\f0 176.\tab}read stream header\par
+{\pntext\f0 177.\tab}meta sync callback for tag info : radio\par
+{\pntext\f0 178.\tab}current netstream tags created\par
+{\pntext\f0 179.\tab}listreex32 created\par
+{\pntext\f0 180.\tab}fader removed\par
+{\pntext\f0 181.\tab}netstream wave not disposing error fixed\par
+{\pntext\f0 182.\tab}dynamic binding removed\par
+{\pntext\f0 183.\tab}static binding created\par
+{\pntext\f0 184.\tab}datagrid favorite coded inline\par
+{\pntext\f0 185.\tab}love control removed\par
+{\pntext\f0 186.\tab}artist layout changed\par
+{\pntext\f0 187.\tab}album layout changed\par
+{\pntext\f0 188.\tab}genre layout changed\par
+{\pntext\f0 189.\tab}hardcoded favorite control for artistpanel\par
+{\pntext\f0 190.\tab}BEQA channel swap fixed\par
+{\pntext\f0 191.\tab}Radio urls stored in streex\par
+{\pntext\f0 192.\tab}streex installer created\par
+{\pntext\f0 193.\tab}no result fade in overflow removed\par
+{\pntext\f0 194.\tab}sbcompleted fixed\par
+{\pntext\f0 195.\tab}no result fade removed for faster response\par
+{\pntext\f0 196.\tab}ICY tag parser created\par
+{\pntext\f0 197.\tab}standby blinky refresh event changed\par
+{\pntext\f0 198.\tab}standby blinky album art fixed\par
+{\pntext\f0 199.\tab}standby blinky removed [temp]\par
+{\pntext\f0 200.\tab}cycle mode toggle created\par
+{\pntext\f0 201.\tab}shuffling created\par
+{\pntext\f0 202.\tab}song repeat\par
+{\pntext\f0 203.\tab}list cylcer\par
+
+\pard\sl360\slmult1\tx360\tx720\tx1080\tx1440\tx1800\tx2160\tx2520\tx2880\tx3240\tx3600\tx3960\tx4320\tx4680\tx5040\tx5400\tx5760\tx6120\tx6480\tx6840\tx7200\tx7560\tx7920\tx8280\tx8640\tx9000\tx9360\tx9720\tx10080\tx10440\tx10800\tx11160\tx11520\par
+
+\pard\sa200\sl240\slmult1\lang9\par
+\par
+}
+ 

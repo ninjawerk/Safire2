@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BobbyTables</name>
+    </assembly>
+    <members>
+        <member name="T:BobbyTables.PullDelegate">
+            <summary>
+            A callback delegate for the async datastore pull operation
+            </summary>
+        </member>
+        <member name="T:BobbyTables.Datastore">
+            <summary>
+            A datastore which contains tables containing object data
+            </summary>
+        </member>
+        <member name="M:BobbyTables.Datastore.Save(System.IO.TextWriter)">
+            <summary>
+            Save the database snapshot. Pending changes will not be saved
+            </summary>
+            <param name="writer">A writer to save the snapshot to</param>
+        </member>
+        <member name="M:BobbyTables.Datastore.Revert">
+            <summary>
+            Revert all pending local changes
+            </summary>
+        </member>
+        <member name="M:BobbyTables.Datastore.PullAsync">
+            <summary>
+            Pull all pending deltas asynchronously (or get a new snapshot if this database hasn't been loaded before) and apply them.
+            Will throw a DatastoreException if this method is called when any local changes are pending
+            </summary>
+        </member>
+        <member name="M:BobbyTables.Datastore.PullAsync(BobbyTables.PullDelegate,System.Action{System.Exception})">
+            <summary>
+            Pull all pending deltas asynchronously (or get a new snapshot if this database hasn't been loaded before) and apply them.
+            Will throw a DatastoreException if this method is called when any local changes are pending
+            </summary>
+        </member>
+        <member name="M:BobbyTables.Datastore.Pull">
+            <summary>
+            Pull all pending deltas (or get a new snapshot if this database hasn't been loaded before) and apply them.
+            Will throw a DatastoreException if this method is called when any local changes are pending
+            </summary>
+        </member>
+        <member name="M:BobbyTables.Datastore.AwaitPullAsync">
+            <summary>
+            Wait for changes to this datastore from the server and apply them when(if) they arrive.
+            This method will throw a DatastoreException if any local changes are pending
+            </summary>
+            <returns>True if changes were applied before the wait time elapsed</returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.AwaitPullAsync(System.Action{System.Boolean},System.Action{System.Exception})">
+            <summary>
+            Wait for changes to this datastore from the server and apply them when(if) they arrive.
+            This method will throw a DatastoreException if any local changes are pending
+            </summary>
+            <returns>True if changes were applied before the wait time elapsed</returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.AwaitPull">
+            <summary>
+            Wait for changes to this datastore from the server and apply them when(if) they arrive.
+            This method will throw a DatastoreException if any local changes are pending
+            </summary>
+            <returns>True if changes were applied before the wait time elapsed</returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.PushAsync">
+            <summary>
+            Push all pending changes to dropbox and apply them to the local datastore copy if the commit succeeds
+            </summary>
+            <returns>True if the changes are accepted without any errors or conflicts</returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.PushAsync(System.Action{System.Boolean},System.Action{System.Exception})">
+            <summary>
+            Push all pending changes to dropbox and apply them to the local datastore copy if the commit succeeds
+            </summary>
+            <returns>True if the changes are accepted without any errors or conflicts</returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.Push">
+            <summary>
+            Push all pending changes to dropbox and apply them to the local datastore copy if the commit succeeds
+            </summary>
+            <returns>True if the changes are accepted without any errors or conflicts</returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.Transaction(BobbyTables.TransactionDelegate)">
+            <summary>
+            Create a new transaction. Any actions performed in the transaction will be committed atomically, and
+            if the commit fails the datastore will be updated, and the actions will be retried until they succeed
+            or the maximum number of retries is exceeded
+            </summary>
+            <param name="actions">The datastore operations to perform in the transaction. Note only synchronous operation
+            should be performed within the actions delegate</param>
+            <returns></returns>
+        </member>
+        <member name="M:BobbyTables.Datastore.GetTable``1(System.String)">
+            <summary>
+            Gets a strongly typed table wrapper
+            </summary>
+            <typeparam name="T">The type of objects stored in the rows of this table</typeparam>
+            <param name="id">The dsid of the table</param>
+            <returns>A strongly typed table wrapper</returns>
+        </member>
+        <member name="P:BobbyTables.Datastore.Id">
+            <summary>
+            The Dropbox Id of this datastore
+            </summary>
+        </member>
+        <member name="P:BobbyTables.Datastore.Handle">
+            <summary>
+            The Dropbox Handle for this datastore
+            </summary>
+        </member>
+        <member name="P:BobbyTables.Datastore.Rev">
+            <summary>
+            The Dropbox revision number for this datastore
+            </summary>
+        </member>
+        <member name="P:BobbyTables.Datastore.Title">
+            <summary>
+            The title for this datastore Dropbox as defined by its Dropbox metadata
+            </summary>
+        </member>
+        <member name="P:BobbyTables.Datastore.Modified">
+            <summary>
+            The last modified date for this datastore Dropbox as defined by its Dropbox metadata
+            </summary>
+        </member>
+        <member name="T:BobbyTables.DatastoreException">
+            <summary>
+            Used when errors occur when calling various API methods
+            </summary>
+        </member>
+        <member name="M:BobbyTables.DatastoreException.#ctor(System.String)">
+            <summary>
+            Default constructor for a new Datastore exception
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:BobbyTables.DatastoreQueryOptions">
+            <summary>
+            Used to define the options when querying a datastore
+            </summary>
+        </member>
+        <member name="F:BobbyTables.DatastoreQueryOptions.UseCached">
+            <summary>
+            Use a locally cached result if available (if no local result is available, will fetch from Dropbox)
+            </summary>
+        </member>
+        <member name="F:BobbyTables.DatastoreQueryOptions.ForceRefresh">
+            <summary>
+            Fetch new results from Dropbox
+            </summary>
+        </member>
+        <member name="T:BobbyTables.DatastoreManager">
+            <summary>
+            Manages listing, retrieving, adding and removing datastores from dropbox
+            </summary>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.#ctor(System.String)">
+            <summary>
+            Construct a new Datastore manager and use the supplied apiToken for all Dropbox API calls
+            </summary>
+            <param name="apiToken">The OAuth token used to authenticate with Dropbox</param>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.GetAsync(System.String,BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            Retrieve a datastore object from dropbox asynchronously
+            </summary>
+            <param name="id">The id of the datastore</param>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <returns></returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.GetAsync(System.String,System.Action{BobbyTables.Datastore},System.Action{System.Exception},BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            Retrieve a datastore object from dropbox asynchronously
+            </summary>
+            <param name="id">The id of the datastore</param>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+            <returns></returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.Get(System.String,BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            Retrieve a datastore object from dropbox
+            </summary>
+            <param name="id">The id of the datastore</param>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <returns></returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.ListAsync(BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            List all dropbox datastores asynchronously
+            </summary>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <returns>A list of all Dropbox datastores</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.ListAsync(System.Action{System.Collections.Generic.IEnumerable{BobbyTables.Datastore}},System.Action{System.Exception},BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            List all dropbox datastores asynchronously
+            </summary>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+            <returns></returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.List(BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            List all dropbox datastores
+            </summary>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <returns>A list of all Dropbox datastores</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.AwaitListChangesAsync">
+            <summary>
+            Wait asynchronously for up to a minute while checking for changes to the datastore list.
+            </summary>
+            <returns>If a change occurs during this time, returns True</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.AwaitListChangesAsync(System.Action{System.Boolean},System.Action{System.Exception})">
+            <summary>
+            Wait asynchronously for up to a minute while checking for changes to the datastore list.
+            </summary>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+            <returns>If a change occurs during this time, returns True</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.AwaitListChanges">
+            <summary>
+            Wait for up to a minute while checking for changes to the datastore list.
+            </summary>
+            <returns>If a change occurs during this time, returns True</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.AwaitDatastoreChangesAsync(System.Collections.Generic.List{BobbyTables.Datastore})">
+            <summary>
+            Wait for up to a minute asynchronously while checking for changes to any datastore. The list of datastores
+            is defined by internally calling the <see cref="M:BobbyTables.DatastoreManager.ListAsync(BobbyTables.DatastoreQueryOptions)"/> method
+            </summary>
+            <param name="changed">Adds every datastore which had a change during the waiting time</param>
+            <returns>True if any changes were detected</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.AwaitDatastoreChangesAsync(System.Action{System.Collections.Generic.List{BobbyTables.Datastore}},System.Action{System.Exception})">
+            <summary>
+            Wait for up to a minute asynchronously while checking for changes to any datastore. The list of datastores
+            is defined by internally calling the <see cref="M:BobbyTables.DatastoreManager.ListAsync(System.Action{System.Collections.Generic.IEnumerable{BobbyTables.Datastore}},System.Action{System.Exception},BobbyTables.DatastoreQueryOptions)"/> method
+            </summary>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.AwaitDatastoreChanges(System.Collections.Generic.List{BobbyTables.Datastore})">
+            <summary>
+            Wait for up to a minute while checking for changes to any datastore. The list of datastores
+            is defined by internally calling the <see cref="M:BobbyTables.DatastoreManager.List(BobbyTables.DatastoreQueryOptions)"/> method
+            </summary>
+            <param name="changed">Adds every datastore which had a change during the waiting time</param>
+            <returns>True if any changes were detected</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.GetOrCreateAsync(System.String,BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            Gets a datastore asynchronously if it already exists, otherwise it is created
+            </summary>
+            <param name="id">The Dropbox id of the datastore</param>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <returns>The existing or newly created datastore</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.GetOrCreateAsync(System.String,System.Action{BobbyTables.Datastore},System.Action{System.Exception},BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            Gets a datastore asynchronously if it already exists, otherwise it is created
+            </summary>
+            <param name="id">The Dropbox id of the datastore</param>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.GetOrCreate(System.String,BobbyTables.DatastoreQueryOptions)">
+            <summary>
+            Gets a datastore if it already exists, otherwise it is created
+            </summary>
+            <param name="id">The Dropbox id of the datastore</param>
+            <param name="options">Whether to retrieve a locally cached version, or to recheck with dropbox</param>
+            <returns>The existing or newly created datastore</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.Create(System.String)">
+            <summary>
+            Creates a new globally unique datastore
+            </summary>
+            <param name="key">Used to generate a hash that will comprise the created datastores dropbox id</param>
+            <returns>A Tuple containing the id of the created datastore, and the datastore itself</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.CreateAsync(System.String,System.Action{System.Collections.Generic.KeyValuePair{System.String,BobbyTables.Datastore}},System.Action{System.Exception})">
+            <summary>
+            Creates a new globally unique datastore asynchronously
+            </summary>
+            <param name="key">Used to generate a hash that will comprise the created datastores dropbox id</param>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.CreateAsync(System.String)">
+            <summary>
+            Creates a new globally unique datastore asynchronously
+            </summary>
+            <param name="key">Used to generate a hash that will comprise the created datastores dropbox id</param>
+            <returns>A Tuple containing the id of the created datastore, and the datastore itself</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.DeleteAsync(BobbyTables.Datastore)">
+            <summary>
+            Delete a datastore and all its tables and data asynchronously
+            </summary>
+            <param name="datastore">The datastore to delete</param>
+            <returns>True if the deletion succeeds</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.DeleteAsync(BobbyTables.Datastore,System.Action{System.Boolean},System.Action{System.Exception})">
+            <summary>
+            Delete a datastore and all its tables and data asynchronously
+            </summary>
+            <param name="datastore">The datastore to delete</param>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.Delete(BobbyTables.Datastore)">
+            <summary>
+            Delete a datastore and all its tables and data
+            </summary>
+            <param name="datastore">The datastore to delete</param>
+            <returns>True if the deletion succeeds</returns>
+        </member>
+        <member name="M:BobbyTables.DatastoreManager.Load(System.IO.TextReader)">
+            <summary>
+            Loads a datastore from a previous snapshot. If this datastore manager already has a datastore with
+            the same Id, loading a snapshot will replace the existing datastore state
+            </summary>
+            <param name="reader">A reader containing the snapshot data</param>
+            <returns>The loaded datastore</returns>
+        </member>
+        <member name="P:BobbyTables.DatastoreManager.ApiToken">
+            <summary>
+            The OAuth token used to authenticate with Dropbox
+            </summary>
+        </member>
+        <member name="T:BobbyTables.IgnoreAttribute">
+            <summary>
+            Putting this attribute on a field or property will result in it being ignored when the object is
+            being serialized or deserialized by BobbyTables
+            </summary>
+        </member>
+        <member name="T:BobbyTables.Record">
+            <summary>
+            Provides a public id field so that classes inheriting from this can automatically
+            be persisted and retrieved. Inheriting from this class is optional - there are a number
+            of ways to provide object id's (see the insert and update methods of 
+            <seealso cref="T:BobbyTables.Table`1"/> for more information)
+            </summary>
+        </member>
+        <member name="P:BobbyTables.Record.Id">
+            <summary>
+            Id used to uniquely identify the record in a dropbox datastore table
+            </summary>
+        </member>
+        <member name="T:BobbyTables.Table`1">
+            <summary>
+            A table of objects indexed by a string id
+            </summary>
+            <typeparam name="T">The type of objects stored in this table</typeparam>
+        </member>
+        <member name="M:BobbyTables.Table`1.Insert(BobbyTables.Table{`0}.IdGetter,`0)">
+            <summary>
+            Insert an object into a table row. The objects public fields or properties should only
+            contain primitive types or lists of primitive types in order to be serialized successfully
+            </summary>
+            <param name="idGetter">A function which returns the id value for the object to be inserted. This value cannot be null or empty</param>
+            <param name="insert">The object to insert</param>
+            <returns>True if the object is inserted, False if a row with this id already exists</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Insert(System.String,`0)">
+            <summary>
+            Insert an object into a table row. The objects public fields or properties should only
+            contain primitive types or lists of primitive types in order to be serialized successfully
+            </summary>
+            <param name="id">The row id to insert the object into</param>
+            <param name="insert">The object to insert</param>
+            <returns>True if the object is inserted, False if a row with this id already exists</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Insert(`0)">
+            <summary>
+            Insert an object with a public Id field/property into a table row. The objects public fields or properties should only
+            contain primitive types or lists of primitive types in order to be serialized successfully. If the public Id field is
+            empty or null, it will be set to an auto generated Id string.
+            </summary>
+            <param name="insert">The object to insert</param>
+            <returns>True if the object is inserted, False if a row with this id already exists</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Update(BobbyTables.Table{`0}.IdGetter,`0)">
+            <summary>
+            Update an object in a table row. The objects public fields or properties should only
+            contain primitive types or lists of primitive types in order to be serialized successfully
+            </summary>
+            <param name="update">The object to update</param>
+            <param name="idGetter">A function that returns the id value for the object being updated. This value cannot be null or empty</param>
+            <returns>True if the object is updated, False if a row with this id does not exist</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Update(System.String,`0)">
+            <summary>
+            Update an object in a table row. The objects public fields or properties should only
+            contain primitive types or lists of primitive types in order to be serialized successfully
+            </summary>
+            <param name="update">The object to update</param>
+            <param name="id">The row id which the object should update</param>
+            <returns>True if the object is updated, False if a row with this id does not exist</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Update(`0)">
+            <summary>
+            Update an object with a public Id field/property in a table row. The objects public fields or properties should only
+            contain primitive types or lists of primitive types in order to be serialized successfully
+            </summary>
+            <param name="update">The object to update</param>
+            <returns>True if the object is updated, False if a row with this id does not exist</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Delete(System.String)">
+            <summary>
+            Delete a row from the table
+            </summary>
+            <param name="id">The row id to remove from the table</param>
+            <returns>True if the row was removed, False if the row did not exist</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Get(System.String)">
+            <summary>
+            Get a row from the table and convert it into the specified object type. Will fail
+            if the object cannot be created from the supplied row data
+            </summary>
+            <param name="id">The row id where the data should be retrieved from</param>
+            <returns>The constructed row object</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.Get(BobbyTables.Table{`0}.IdSetter,System.String)">
+            <summary>
+            Get a row from the table and convert it into the specified object type. Will fail
+            if the object cannot be created from the supplied row data
+            </summary>
+            <param name="idSetter">A function that will be called on the object to populate the objects id field</param>
+            <param name="id">The row id where the data should be retrieved from</param>
+            <returns>The constructed row object</returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.GetEnumerator">
+            <summary>
+            Gets an enumerator containing all the objects in this table
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BobbyTables.Table`1.GetEnumerator(BobbyTables.Table{`0}.IdSetter)">
+            <summary>
+            Gets an enumerator containing all the objects in this table
+            </summary>
+            <param name="idSetter">A function that will be called on all objects to populate the objects id field</param>
+            <returns></returns>
+        </member>
+        <member name="P:BobbyTables.Table`1.Id">
+            <summary>
+            The id of this table
+            </summary>
+        </member>
+        <member name="P:BobbyTables.Table`1.Datastore">
+            <summary>
+            Get the datastore this table belongs to
+            </summary>
+        </member>
+        <member name="T:BobbyTables.Table`1.IdGetter">
+            <summary>
+            Used to get the id for a tables record object type
+            </summary>
+            <param name="obj">a record object in a table</param>
+            <returns></returns>
+        </member>
+        <member name="T:BobbyTables.Table`1.IdSetter">
+            <summary>
+            Used to set the id for a record object in a table
+            </summary>
+            <param name="obj">a record object in a table</param>
+            <param name="id">the id to set for this object</param>
+        </member>
+        <member name="T:BobbyTables.TransactionDelegate">
+            <summary>
+            A delegate used to contain all the operations that will occur in a given transaction
+            </summary>
+        </member>
+        <member name="T:BobbyTables.Transaction">
+            <summary>
+            Used to handle submitting serveral operations in a single atomic operation and handling
+            any possible conflicts by retrying those operations if necessary
+            </summary>
+        </member>
+        <member name="M:BobbyTables.Transaction.PushAsync(System.Int32)">
+            <summary>
+            Attempts to push all actions in the transaction to dropbox asynchronously
+            </summary>
+            <returns>True if the actions in the transaction were pushed to dropbox</returns>
+        </member>
+        <member name="M:BobbyTables.Transaction.PushAsync(System.Action{System.Boolean},System.Action{System.Exception},System.Int32)">
+            <summary>
+            Attempts to push all actions in the transaction to dropbox asynchronously
+            </summary>
+            <param name="retries">How many times to retry committing the actions before giving up</param>
+            <param name="success">Callback if the method is successful</param>
+            <param name="failure">Callback if the method fails</param>
+            <returns>True if the actions in the transaction were pushed to dropbox</returns>
+        </member>
+        <member name="M:BobbyTables.Transaction.Push(System.Int32)">
+            <summary>
+            Attempts to push all actions in the transaction to dropbox
+            </summary>
+            <param name="retries">How many times to retry committing the actions before giving up</param>
+            <returns>True if the actions in the transaction were pushed to dropbox</returns>
+        </member>
+    </members>
+</doc>

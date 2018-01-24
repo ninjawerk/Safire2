@@ -1,0 +1,530 @@
+﻿<controls:MetroWindow
+    xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:safireControls="clr-namespace:Safire.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:safireFx="clr-namespace:Safire.Fx"
+    xmlns:safireLibrary="clr-namespace:Safire.Library"
+    xmlns:properties="clr-namespace:Safire.Properties" xmlns:interactive="clr-namespace:Safire.Controls.Interactive"
+
+    xmlns:blink="clr-namespace:Kornea.Blink;assembly=Kornea"
+
+    xmlns:Custom="http://metro.mahapps.com/winfx/xaml/shared"
+
+    mc:Ignorable="d"
+    x:Class="Safire.MainWindow"
+    Title="HARMONY"
+    Height="513.375"
+    Width="938" Background="Black" BorderBrush="Black" ShowWindowCommands="Hidden" MaxWidth="Infinity" MinWidth="888"
+    MinHeight="550" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontStretch="ExtraCondensed"
+    FontWeight="Light" WindowStartupLocation="CenterScreen">
+    <controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="Resources/PlaylistStyles.xaml" />
+
+                <ResourceDictionary
+                    Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.AnimatedSingleRowTabControl.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatSlider.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="plstSong">
+                <TextBlock Foreground="{DynamicResource TextBrush}" FontWeight="Bold"
+                           FontFamily="Calibri"
+                           Text="{Binding Title}" />
+            </DataTemplate>
+
+            <DataTemplate x:Key="plstArtist">
+                <TextBlock Foreground="{DynamicResource AccentColorBrush}"
+                           Text="{Binding Artist}" />
+            </DataTemplate>
+            <BooleanToVisibilityConverter x:Key="b2v" />
+
+            <Style x:Key="PlayerControlButton" TargetType="{x:Type Button}">
+                <Setter Property="MinHeight" Value="25" />
+                <Setter Property="FontWeight" Value="Bold" />
+                <Setter Property="FontSize" Value="{DynamicResource UpperCaseContentFontSize}" />
+                <Setter Property="FontFamily" Value="{DynamicResource DefaultFont}" />
+                <Setter Property="Background" Value="{DynamicResource GrayBrush10}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}" />
+                <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                <Setter Property="Padding" Value="5,6" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Grid>
+                                <Border x:Name="Background" BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        Background="{TemplateBinding Background}" CornerRadius="3" />
+                                <Rectangle x:Name="DisabledVisualElement"
+                                           Fill="{DynamicResource ControlsDisabledBrush}" IsHitTestVisible="False"
+                                           Opacity="0" RadiusY="3" RadiusX="3" />
+                                <ContentPresenter x:Name="contentPresenter"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Content="{TemplateBinding Content}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  Margin="{TemplateBinding Padding}" RecognizesAccessKey="True"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="controls:ButtonHelper.PreserveTextCase" Value="False">
+                                    <Setter Property="Content" TargetName="contentPresenter"
+                                            Value="{Binding Content, Converter={Custom:ToUpperConverter}, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Trigger>
+                                <Trigger Property="controls:ButtonHelper.PreserveTextCase" Value="True">
+                                    <Setter Property="Content" TargetName="contentPresenter"
+                                            Value="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" />
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" TargetName="Background"
+                                            Value="{DynamicResource GrayBrush8}" />
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="Background" TargetName="Background"
+                                            Value="{DynamicResource GrayBrush7}" />
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter Property="Opacity" TargetName="DisabledVisualElement" Value="0.7" />
+                                    <Setter Property="Opacity" TargetName="contentPresenter" Value="0.3" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </controls:MetroWindow.Resources>
+
+
+    <controls:MetroWindow.RightWindowCommands>
+        <controls:WindowCommands>
+            <Button Click="LaunchSettingsWindow" Content="&#xEE7A; Settings"
+                    FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" />
+        </controls:WindowCommands>
+    </controls:MetroWindow.RightWindowCommands>
+
+
+    <controls:MetroWindow.Flyouts>
+        <controls:FlyoutsControl BorderBrush="Black">
+
+            <controls:Flyout Header="My Playlists" Theme="Adapt" Position="Right" Margin="0,36,0,31"
+                             Background="{DynamicResource WhiteBrush}" Foreground="{DynamicResource TextBrush}"
+                             VerticalAlignment="Stretch">
+
+                <Grid Width="250">
+                    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="29"
+                                Orientation="Horizontal">
+                        <Button Content="&#xEBA2;" Width="28" Foreground="{DynamicResource TextBrush}"
+                                BorderBrush="{x:Null}" BorderThickness="0" FontSize="16"
+                                FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                                Style="{DynamicResource ChromelessButtonStyle}" Click="AddPlaylist" />
+                        <Button Content="&#xEBA3;" Width="28" Foreground="{DynamicResource TextBrush}"
+                                BorderBrush="{x:Null}" BorderThickness="0" FontSize="16"
+                                FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                                Style="{DynamicResource ChromelessButtonStyle}" Click="RemovePlaylist" />
+
+                        <ComboBox IsTextSearchEnabled="False" PreviewTextInput="Playlist_TextChanged"
+                                  HorizontalAlignment="Right" Width="180" Height="29" x:Name="playlistName"
+                                  BorderThickness="0" Text="Unnamed Playlist" VerticalAlignment="Top"
+                                  Foreground="{DynamicResource TextBrush}" FontSize="16" FontFamily="Segoe UI Light"
+                                  IsEditable="True" Background="{x:Null}"
+                                  SelectionChanged="playlistName_SelectionChanged" />
+
+                    </StackPanel>
+                    <interactive:SortableListView x:Name="playlist" MouseDoubleClick="Playlist_OnMouseDoubleClick"
+                                                  AllowDrop="True" Margin="0,33,0,31"
+                                                  Foreground="{DynamicResource TextBrush}" Background="{x:Null}"
+                                                  BorderThickness="0" BorderBrush="{x:Null}">
+                        <interactive:SortableListView.View>
+                            <GridView>
+                                <GridViewColumn CellTemplate="{StaticResource plstSong}" Header="Song" Width="200" />
+                                <GridViewColumn CellTemplate="{StaticResource plstArtist}" Header="Artist" Width="150" />
+
+                            </GridView>
+                        </interactive:SortableListView.View>
+
+                    </interactive:SortableListView>
+                    <Button Content="&#xEEEF;" Foreground="{DynamicResource TextBrush}" BorderBrush="{x:Null}"
+                            BorderThickness="0" FontSize="16"
+                            FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                            Style="{DynamicResource ChromelessButtonStyle}" Click="OpenLocalPlaylist"
+                            Margin="222,0,0,0" ToolTip="Open playlist" VerticalAlignment="Bottom" />
+                    <Button Content="&#xEEF4;" Foreground="{DynamicResource TextBrush}" BorderBrush="{x:Null}"
+                            BorderThickness="0" FontSize="16"
+                            FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                            Style="{DynamicResource ChromelessButtonStyle}" Click="SaveLocalPlaylist"
+                            Margin="189,0,33,0" ToolTip="Save playlist as" VerticalAlignment="Bottom" />
+                </Grid>
+
+            </controls:Flyout>
+
+        </controls:FlyoutsControl>
+    </controls:MetroWindow.Flyouts>
+    <controls:MetroWindow.GlowBrush>
+        <SolidColorBrush Color="{DynamicResource AccentColor}" />
+    </controls:MetroWindow.GlowBrush>
+    <Grid x:Name="grid">
+        <Image x:Name="BackgroundImage" Stretch="UniformToFill" />
+        <Border x:Name="NavPanel" Height="45.5" VerticalAlignment="Top">
+            <Border.Background>
+                <SolidColorBrush Color="{DynamicResource WhiteColor}" />
+            </Border.Background>
+        </Border>
+        <Grid x:Name="MainContent" Margin="0,0,0,57">
+            <TabControl x:Name="MainNav" Margin="-2,0,-2,5" BorderThickness="0" BorderBrush="{x:Null}"
+                        Background="Black" SelectionChanged="MainNav_SelectionChanged">
+                <controls:MetroTabItem Header="Play" Height="40" FontFamily="Segoe UI Light" VerticalAlignment="Top"
+                                       controls:ControlsHelper.HeaderFontSize="22.7">
+                    <Grid x:Name="grdPan" Margin="0,0,0,0" MouseMove="canvasPan" MouseLeftButtonDown="panStart"
+                          Background="#01000000"
+                          Visibility="{Binding PlayGrid, Converter={StaticResource b2v}, Source={x:Static properties:Settings.Default}}">
+                        <Path HorizontalAlignment="Center" Height="328" VerticalAlignment="Center" Width="328"
+                              Data="M143.71869,163.99174 L143.78079,164.0032 143.7541,164.00826 143.6496,163.99828 z M177.5517,144.65831 C177.08363,144.63866 176.56639,144.9435 176,145.57283 L176,182.42717 C176.95659,183.43411 177.73697,183.61032 178.34113,182.95581 L209.30437,165.43491 C209.65678,165.03212 209.83299,164.55382 209.83299,164 209.83299,163.44618 209.65678,162.96788 209.30437,162.56509 L178.34113,145.04417 C178.09569,144.79874 177.83253,144.67012 177.5517,144.65831 z M143.71869,125.3249 C143.25063,125.30523 142.7334,125.61007 142.16701,126.23941 L142.16701,163.09375 C142.64529,163.59723 143.07954,163.89301 143.46973,163.98111 L143.6496,163.99828 143.43196,164.01888 C143.04178,164.10699 142.62012,164.40277 142.16701,164.90625 L142.16701,201.76059 C143.1236,202.76753 143.90396,202.94376 144.50812,202.28925 L175.47136,184.76833 C175.82379,184.36554 176,183.88724 176,183.33342 176,182.7796 175.82379,182.3013 175.47136,181.89851 L144.50812,164.37761 C144.34448,164.21397 144.173,164.10226 143.99364,164.04248 L143.78079,164.0032 144.02196,163.95752 C144.19502,163.89772 144.35709,163.78601 144.50812,163.62239 L175.47136,146.10147 C175.82379,145.6987 176,145.2204 176,144.66658 176,144.11276 175.82379,143.63446 175.47136,143.23167 L144.50812,125.71076 C144.26268,125.46532 143.99954,125.33669 143.71869,125.3249 z M164,0 C254.57469,0 328,73.425301 328,164 328,254.57469 254.57469,328 164,328 73.425301,328 0,254.57469 0,164 0,73.425301 73.425301,0 164,0 z"
+                              Stretch="Fill">
+                            <Path.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#34000000" Offset="0" />
+                                    <GradientStop Color="#00000000" Offset="1" />
+                                </RadialGradientBrush>
+                            </Path.Fill>
+                        </Path>
+                        <Grid x:Name="pancanvas" Margin="10,62.5,0,62.5" HorizontalAlignment="Center"
+                              Visibility="Hidden">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,-226.5,0">
+                                <Grid x:Name="grdNowPlaying">
+                                    <WrapPanel Orientation="Vertical" VerticalAlignment="Top" Height="250"
+                                               HorizontalAlignment="Left" Margin="0,25,13,0">
+                                        <Border x:Name="borAlb" BorderThickness="2"
+                                                BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,2,0,0">
+                                            <Grid>
+                                                <Image x:Name="AlbArt" Stretch="UniformToFill"
+                                                       MouseLeftButtonUp="AlbArt_MouseLeftButtonUp" Margin="0" />
+                                                <TextBlock x:Name="icoAlb" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Foreground="White" Background="#7F000000"
+                                                           TextTrimming="CharacterEllipsis" Padding="0,4"
+                                                           FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </Border>
+                                        <Border x:Name="borGen" BorderThickness="2" BorderBrush="#0AFFFFFF"
+                                                Height="120" VerticalAlignment="Top" Width="120"
+                                                HorizontalAlignment="Left" Margin="0,2,0,0">
+                                            <Grid Margin="0">
+                                                <Grid.Background>
+                                                    <RadialGradientBrush Center="0,0" GradientOrigin="0,0" RadiusX="1"
+                                                                         RadiusY="1">
+                                                        <GradientStop Color="#FF151515" Offset="0" />
+                                                        <GradientStop Color="Black" Offset="1" />
+                                                    </RadialGradientBrush>
+                                                </Grid.Background>
+                                                <TextBlock HorizontalAlignment="Center" Margin="0,-14,0,0"
+                                                           TextWrapping="Wrap" Text="&#xE810;"
+                                                           VerticalAlignment="Center"
+                                                           FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                                                           FontSize="48" Foreground="White" />
+                                                <TextBlock x:Name="icoGen" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" Foreground="White" FontSize="10.667"
+                                                           Height="25" />
+                                            </Grid>
+                                        </Border>
+                                        <Border x:Name="borArt" BorderThickness="2" BorderBrush="#0AFFFFFF"
+                                                Height="242" VerticalAlignment="Top" Width="240"
+                                                HorizontalAlignment="Left" Margin="0,2,0,0">
+                                            <Grid>
+                                                <Image x:Name="ArtistArt" Stretch="UniformToFill"
+                                                       MouseLeftButtonUp="ArtistArt_MouseLeftButtonUp" Margin="0" />
+                                                <TextBlock x:Name="icoArt" HorizontalAlignment="Left"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="236"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" />
+                                            </Grid>
+                                        </Border>
+                                    </WrapPanel>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left" TextWrapping="Wrap"
+                                               Text="NOW PLAYING" VerticalAlignment="Top" Width="149" FontSize="16" />
+                                </Grid>
+                                <Grid>
+                                    <WrapPanel x:Name="recentWraps" VerticalAlignment="Top" Height="250"
+                                               HorizontalAlignment="Left" Width="256" Margin="0,25,0,0">
+                                        <controls:Tile Click="recenticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt1" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb1" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                        <controls:Tile Click="recenticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1_Copy"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt2" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb2" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                        <controls:Tile Click="recenticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1_Copy1"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt3" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb3" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                        <controls:Tile Click="recenticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1_Copy2"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt4" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb4" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                    </WrapPanel>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="0"
+                                               TextWrapping="Wrap" Text="RECENT SONGS" VerticalAlignment="Top"
+                                               Width="139" FontSize="16" />
+                                </Grid>
+                                <Grid>
+                                    <WrapPanel x:Name="mostWraps" VerticalAlignment="Top" Height="250"
+                                               HorizontalAlignment="Left" Width="256" Margin="0,25,0,0">
+                                        <controls:Tile Click="mosticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb2"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt5" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb5" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                        <controls:Tile Click="mosticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1_Copy3"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt6" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb6" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                        <controls:Tile Click="mosticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1_Copy4"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt7" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb7" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                        <controls:Tile Click="mosticon_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb1_Copy5"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="120" Width="120"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="116">
+                                                <Image x:Name="AlbArt8" Stretch="UniformToFill" Margin="0" />
+                                                <TextBlock x:Name="icoAlb8" HorizontalAlignment="Left" Margin="0"
+                                                           TextWrapping="Wrap" VerticalAlignment="Bottom" Width="116"
+                                                           Background="#7F000000" TextTrimming="CharacterEllipsis"
+                                                           Padding="0,4" FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                    </WrapPanel>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="0"
+                                               TextWrapping="Wrap" Text="MOST LISTENED" VerticalAlignment="Top"
+                                               Width="139" FontSize="16" />
+                                </Grid>
+                                <Grid x:Name="chartsGrd">
+                                    <WrapPanel x:Name="mostWraps1" VerticalAlignment="Top" Height="250"
+                                               HorizontalAlignment="Left" Width="262.5" Margin="0,25,0,0">
+                                        <controls:Tile Click="topCharts_MouseLeftButtonUp"
+                                                       Background="{DynamicResource WhiteBrush}" x:Name="borAlb3"
+                                                       BorderThickness="2"
+                                                       BorderBrush="#0AFFFFFF" Height="240" Width="240"
+                                                       VerticalAlignment="Top" HorizontalAlignment="Left"
+                                                       Margin="2,2,0,0">
+                                            <Grid Height="240" Width="240">
+                                                <Image x:Name="chartArt" Stretch="UniformToFill" />
+                                                <TextBlock x:Name="icoChart" Margin="0" TextWrapping="Wrap"
+                                                           VerticalAlignment="Bottom" Background="#7F000000"
+                                                           TextTrimming="CharacterEllipsis" Padding="0,4"
+                                                           FontSize="10.667" Height="25" />
+                                            </Grid>
+                                        </controls:Tile>
+                                    </WrapPanel>
+                                    <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="0"
+                                               TextWrapping="Wrap" Text="TOP CHARTS" VerticalAlignment="Top"
+                                               Width="139" FontSize="16" />
+                                </Grid>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </controls:MetroTabItem>
+                <controls:MetroTabItem Header="Library" Height="40.5" FontFamily="Segoe UI Light"
+                                       VerticalAlignment="Top"
+                                       controls:ControlsHelper.HeaderFontSize="22.7">
+                    <safireLibrary:LibraryControl x:Name="hLibrary" Margin="0,-2.5,0,-1.5"
+                                                  FontFamily="Segoe UI Semilight"
+                                                  FontSize="13.333" />
+                </controls:MetroTabItem>
+                <controls:MetroTabItem Header="Fx" Height="40" FontFamily="Segoe UI Light" VerticalAlignment="Top"
+                                       FontSize="14.667" controls:ControlsHelper.HeaderFontSize="22.7"
+                                       Foreground="{x:Null}">
+                    <Grid Margin="0,-2.5,0,-1.5">
+                        <safireFx:UserControl1 x:Name="FxPanel" d:LayoutOverrides="Height" />
+                    </Grid>
+                </controls:MetroTabItem>
+            </TabControl>
+            <Menu
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right" Margin="0,11,125.505,0" Width="81.7" Height="27.5" d:IsHidden="True">
+                <MenuItem Header="&#xEA97;" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Width="32.167"
+                          Height="24.5" Margin="0,5,0,0" FontSize="13.333">
+                    <MenuItem Header="Search in" IsCheckable="True" IsEnabled="False" />
+                    <MenuItem x:Name="MnuSearchSongs" Click="SearchMenuItem_OnClick" IsCheckable="True" Header="Songs"
+                              IsChecked="{Binding SearchSongs, Source={x:Static properties:Settings.Default}}" />
+                    <MenuItem x:Name="MnuSearchArtists" Click="SearchMenuItem_OnClick" IsCheckable="True"
+                              Header="Artists"
+                              IsChecked="{Binding SearchArtists, Source={x:Static properties:Settings.Default}}" />
+                    <MenuItem x:Name="MnuSearchAlbums" Click="SearchMenuItem_OnClick" IsCheckable="True"
+                              Header="Albums"
+                              IsChecked="{Binding SearchAlbums, Source={x:Static properties:Settings.Default}}" />
+                    <MenuItem x:Name="MnuSearchGenres" Click="SearchMenuItem_OnClick" IsCheckable="True"
+                              Header="Albums"
+                              IsChecked="{Binding SearchGenres, Source={x:Static properties:Settings.Default}}" />
+                </MenuItem>
+            </Menu>
+            <TextBox x:Name="txtSearch"
+                     controls:TextBoxHelper.Watermark="Search"
+                     Style="{DynamicResource SearchMetroTextBox}" Height="25.5" Margin="0,11,8,0"
+                     TextChanged="txtSearch_TextChanged" Width="172.5" HorizontalAlignment="Right"
+                     VerticalAlignment="Top" MinHeight="21" PreviewKeyDown="txtSearch_PreviewKeyDown" d:IsHidden="True" />
+        </Grid>
+        <Grid x:Name="GrdControlBar" VerticalAlignment="Bottom" Height="57" IsEnabled="True">
+
+            <Border x:Name="ControlBorder" Height="57" VerticalAlignment="Bottom" d:LayoutOverrides="VerticalAlignment"
+                    BorderThickness="0">
+                <Border.Background>
+                    <SolidColorBrush Color="{DynamicResource WhiteColor}" />
+                </Border.Background>
+                <Grid Margin="296.25,0,296.25,-5.5">
+                    <safireControls:PlayerControl d:LayoutOverrides="VerticalMargin" FontSize="18.667"
+                                                  HorizontalAlignment="Center" />
+                    <Button x:Name="btnPlayPause" Width="36" Style="{DynamicResource MetroCircleButtonStyle}"
+                            FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Click="PlayListFlyOut"
+                            HorizontalAlignment="Right" Margin="0,0,-293.5,0" VerticalAlignment="Center" Height="36"
+                            Content="&#xEEE3;" />
+                    <Button x:Name="togCycle" Cursor="Hand" BorderBrush="{x:Null}" BorderThickness="0"
+                            FontSize="18.667" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                            Click="togCycleClick" Margin="0,-3,260,0" HorizontalAlignment="Center"
+                            VerticalAlignment="Center" FontWeight="ExtraLight" FontStretch="UltraCondensed"
+                            Style="{DynamicResource PlayerControlButton}" Background="{x:Null}" />
+                    <Button x:Name="togScrobble" Cursor="Hand" BorderBrush="{x:Null}" BorderThickness="0" FontSize="10"
+                            FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Click="togScrobbleClick"
+                            Margin="0,16,314.5,21.5" HorizontalAlignment="Center" VerticalAlignment="Center"
+                            FontWeight="Normal" FontStretch="Normal" Style="{DynamicResource PlayerControlButton}"
+                            Background="{x:Null}" Content="fx" Width="23" />
+                </Grid>
+            </Border>
+            <StackPanel Margin="0,0,8,0" VerticalAlignment="Top" Orientation="Horizontal" Height="57">
+                <StackPanel Margin="6,0,19,0" Width="226.713" VerticalAlignment="Bottom" Height="49">
+                    <TextBlock x:Name="TblkTitle" FontSize="18.667" FontWeight="Bold"
+                               Foreground="{DynamicResource TextBrush}" FontFamily="Segoe UI Light"
+                               TextTrimming="CharacterEllipsis" />
+
+                    <TextBlock x:Name="TblkArtist" FontSize="12" Foreground="{DynamicResource TextBrush}" />
+                    <TextBlock x:Name="TblkAlbum" FontSize="12" Foreground="{DynamicResource TextBrush}" Text="One-X"
+                               FontStyle="Italic" Visibility="Collapsed" />
+
+                </StackPanel>
+            </StackPanel>
+            <Slider IsMoveToPointEnabled="True" x:Name="seeker" Height="5" VerticalAlignment="Top"
+                    Style="{DynamicResource FlatSlider}" Background="{DynamicResource GrayBrush8}" Width="Auto"
+                    Margin="0,-5,0,0"
+                    MinHeight="1" ValueChanged="seeker_ValueChanged" Cursor="Hand">
+
+                <Slider.Foreground>
+                    <SolidColorBrush Color="{DynamicResource AccentColor}" />
+                </Slider.Foreground>
+            </Slider>
+            <Slider IsMoveToPointEnabled="True" x:Name="cvol" Height="6"
+                    Style="{DynamicResource FlatSlider}" Background="{DynamicResource GrayBrush8}" Width="83.5"
+                    MinHeight="1" ValueChanged="Volume_ValueChanged" Cursor="Hand" HorizontalAlignment="Center"
+                    Margin="321,-1,0,0" VerticalAlignment="Center"
+                    Value="{Binding Volume, Source={x:Static properties:Settings.Default}}">
+
+                <Slider.Foreground>
+                    <SolidColorBrush Color="{DynamicResource AccentColor}" />
+                </Slider.Foreground>
+            </Slider>
+
+        </Grid>
+        <StackPanel x:Name="progPanel" HorizontalAlignment="Right" Margin="0,0,43.75,16" Orientation="Horizontal"
+                    VerticalAlignment="Bottom" Visibility="Hidden">
+            <controls:ProgressRing x:Name="pgRing" HorizontalAlignment="Stretch" Height="15" Margin="0"
+                                   VerticalAlignment="Stretch" Width="10.5" IsLarge="False" IsActive="True" />
+            <TextBlock x:Name="pgCaption" Margin="4,0,0,0" TextWrapping="Wrap" Text="Adding Songs" FontSize="10.667"
+                       VerticalAlignment="Center" Foreground="{DynamicResource ResourceKey=AccentColorBrush}"
+                       HorizontalAlignment="Right" />
+        </StackPanel>
+        <blink:BlinkGrid x:Name="blinkGrid" Margin="0,0,0,61" Background="{DynamicResource WhiteBrush}"
+                         d:IsHidden="True" Visibility="Hidden">
+            <StackPanel HorizontalAlignment="Left" Height="48" Margin="6,8,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top" Width="146.5">
+                <Button x:Name="BlinkBackBtn" Style="{DynamicResource MetroCircleButtonStyle}"
+                        FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+                        Content="&#xEDD7;" Width="48" FontSize="24" Click="BlinkBack" />
+                <TextBlock Margin="0,5.666,0,9.834" TextWrapping="Wrap" Text="Back" Width="62" FontSize="24" />
+            </StackPanel>
+        </blink:BlinkGrid>
+        <blink:BlinkGrid x:Name="fsBlink" Background="{DynamicResource WhiteBrush}" ClipToBounds="True"
+                         Margin="0,-31,0,0" Visibility="Hidden" Opacity="0" />
+
+
+    </Grid>
+</controls:MetroWindow>

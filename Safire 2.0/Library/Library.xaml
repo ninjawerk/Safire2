@@ -1,0 +1,264 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:library="clr-namespace:Safire.Library"
+
+    xmlns:Custom1="http://metro.mahapps.com/winfx/xaml/controls"
+
+    xmlns:Safire="clr-namespace:Safire"
+
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
+    xmlns:properties="clr-namespace:Safire.Properties"
+    xmlns:componentModel="clr-namespace:System.ComponentModel;assembly=WindowsBase"
+
+    mc:Ignorable="d"
+    x:Class="Safire.Library.LibraryControl"
+    x:Name="UserControl"
+    d:DesignWidth="640" d:DesignHeight="480" SizeChanged="UserControl_SizeChanged">
+    <UserControl.Resources>
+
+        <!-- DataTemplate to display a Country -->
+        <DataTemplate x:Key="artistDataTemplate">
+            <StackPanel Orientation="Horizontal"
+                        VerticalAlignment="Center"
+                        Margin="5,0,0,0">
+                <!--<TextBlock MaxHeight="15"
+                   Margin="0, 0, 5, 0"
+                   Text="&#xEE5D;"FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"/>-->
+
+                <TextBlock Text="{Binding}"
+                           TextTrimming="WordEllipsis"
+                           VerticalAlignment="Center" />
+            </StackPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="favouriteDataTemplate">
+            <TextBlock x:Name="textBlock"   Tag="{Binding RelativeSource={RelativeSource AncestorType=xcdg:DataRow}, Path=DataContext.Path}" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" MouseLeftButtonUp="TrackFavChanged" >
+
+
+            </TextBlock>
+
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding  }" Value="2">
+                    <Setter Property="Text" Value="" TargetName="textBlock" />
+                    <Setter Property="Opacity" Value=".25" TargetName="textBlock" />
+                </DataTrigger>
+                <DataTrigger Binding="{Binding  }" Value="5" >
+
+                    <Setter Property="Text" Value="" TargetName="textBlock" />
+                    <Setter Property="Opacity" Value="1" TargetName="textBlock" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+
+        </DataTemplate>
+
+        <Style TargetType="{x:Type xcdg:GroupLevelIndicatorPane}">
+            <Setter Property="Visibility" Value="Collapsed" />
+        </Style>
+        <Style TargetType="{x:Type xcdg:GroupHeaderControl}">
+            <Setter Property="Foreground" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+
+            <Setter Property="Visibility" Value="Visible" />
+        </Style>
+        <Style TargetType="{x:Type xcdg:GroupByControl}">
+            <Setter Property="Foreground" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="ConnectionLinePen" Value="{StaticResource AccentColorBrush}" />
+
+        </Style>
+        <Style TargetType="{x:Type xcdg:ColumnManagerRow}">
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="Background" Value="{StaticResource WhiteColorBrush}" />
+            <Setter Property="Foreground" Value="{StaticResource BlackColorBrush}" />
+            <Setter Property="SelectionBackground" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="BorderBrush" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="BorderThickness" Value="0,0,0,2" />
+
+        </Style>
+
+
+        <Style TargetType="{x:Type xcdg:DataRow}">
+            <Setter Property="Background" Value="{StaticResource WhiteColorBrush}" />
+            <Setter Property="SelectionBackground" Value="{StaticResource AccentColorBrush}" />
+            <Setter Property="SelectionForeground" Value="{StaticResource TextBrush}" />
+            <Setter Property="InactiveSelectionBackground" Value="{StaticResource AccentColorBrush2}" />
+            <Setter Property="InactiveSelectionForeground" Value="{StaticResource TextBrush}" />
+            <Setter Property="Height" Value="10" />
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"
+                         Value="True">
+                    <Setter Property="Background"
+                            Value="{StaticResource GrayBrush4}" />
+                    <Setter Property="Height"
+                            Value="15" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="{x:Type xcdg:DataCell}">
+            <EventSetter Event="MouseRightButtonUp" Handler="CellMouseRightButtonUpHandler"/>
+            <Setter Property="SelectionBackground" Value="White" />
+            <Setter Property="SelectionForeground" Value="Black" />
+            <Setter Property="CurrentBackground" Value="#FF761F1F" />
+            <Setter Property="CurrentForeground" Value="White" />
+            <Setter Property="InactiveSelectionForeground" Value="#FF975D5D" />
+            <Setter Property="InactiveSelectionBackground" Value="#FF150B0B" />
+            <Setter Property="Height" Value="20" />
+
+        </Style>
+        <SolidColorBrush x:Key="blackText" Color="#FF2F2F2F" />
+        <BooleanToVisibilityConverter x:Key="b2v" />
+
+
+    </UserControl.Resources>
+    <UserControl.Background>
+        <SolidColorBrush Color="{DynamicResource WhiteColor}" />
+    </UserControl.Background>
+    <Grid x:Name="LayoutRoot">
+
+        <Custom1:MetroTabControl x:Name="Tabs" SelectionChanged="TabSelectionChanged" Margin="165,-22,0,-1.332"
+                                 FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs">
+            <Custom1:MetroTabItem Header="&#xEE83; Songs" Custom1:ControlsHelper.HeaderFontSize="15.7"
+                                  FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Width="100"
+                                  Margin="0,0,0,180.4">
+                <Grid Margin="0">
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Top" />
+                    <TextBlock x:Name="noresults" Margin="0" TextWrapping="Wrap" Text="No results"
+                               FontFamily="Segoe UI Light" FontSize="16" Foreground="{DynamicResource TextBrush}"
+                               HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Hidden" />
+                    <xcdg:DataGridControl   x:Name="tracklist" Width="Auto" HorizontalAlignment="Stretch"
+                                          Foreground="{StaticResource BlackBrush}"
+                                        
+                                          ReadOnly="True" SelectionMode="Single" NavigationBehavior="RowOnly"
+                                          BorderThickness="0,0,0,0" Margin="3,0,0,0" Background="{x:Null}"
+                                          AutoCreateColumns="False">
+
+                        <xcdg:DataGridControl.ContextMenu>
+                            <ContextMenu Background="{DynamicResource GrayBrush8}">
+                                <MenuItem Background="{DynamicResource GrayBrush8}" Header="Play"  Click="MenuPlaySong">
+                                    <MenuItem.Icon>
+                                        <TextBlock FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Text=" " Foreground="{DynamicResource AccentColorBrush3}"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem  Background="{DynamicResource GrayBrush8}" Header="Show Information" Click="MenuShowInformation">
+                                    <MenuItem.Icon>
+                                        <TextBlock FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Text=" " Foreground="{DynamicResource AccentColorBrush3}"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Background="{DynamicResource GrayBrush8}" Header="Show in folder" Click="MenuShowInFolder">
+                                    <MenuItem.Icon>
+                                        <TextBlock FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Text=" " Foreground="{DynamicResource AccentColorBrush3}"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <Separator   />
+                                <MenuItem Background="{DynamicResource GrayBrush8}" Header="Remove from library" Click="MenuRemoveFromLibrary">
+                                    <MenuItem.Icon>
+                                        <TextBlock FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Text=" " Foreground="{DynamicResource AccentColorBrush3}"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                                <MenuItem Background="{DynamicResource GrayBrush8}" Header="Delete file" Click="MenuDeleteFile">
+                                    <MenuItem.Icon>
+                                        <TextBlock FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Text=" " Foreground="{DynamicResource AccentColorBrush3}"/>
+                                    </MenuItem.Icon>
+                                </MenuItem>
+                            </ContextMenu>
+                        </xcdg:DataGridControl.ContextMenu>
+                        <xcdg:DataGridControl.View>
+
+                            <!--ColumnStretchMode="Last"-->
+                            <xcdg:TableflowView ColumnStretchMode="Last" UseDefaultHeadersFooters="False"
+                                                ShowRowSelectorPane="False"  
+                                                IsAlternatingRowStyleEnabled="False" FixedColumnCount="0">
+                                <xcdg:TableflowView.FixedHeaders>
+
+                                    <DataTemplate>
+                                        <xcdg:ColumnManagerRow />
+                                    </DataTemplate>
+                                </xcdg:TableflowView.FixedHeaders>
+                            </xcdg:TableflowView>
+
+                        </xcdg:DataGridControl.View>
+
+
+                        <xcdg:DataGridControl.Columns>
+
+                            <!--<DataGridTemplateColumn  Header="" SortDirection="Ascending" CanUserSort="True" SortMemberPath="Rate"   >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <library:RateControl Rate="{Binding Rate}" Path="{Binding Path}" TextAlignment="Center" FontSize="16"  />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>-->
+
+                            <xcdg:Column FieldName="Title" Title="Song" Width="200"  
+                                         Visible="{Binding tkTitle, Source={x:Static properties:Settings.Default}}" />
+                            <xcdg:Column FieldName="Artist"
+                                         Visible="{Binding tkArtist, Source={x:Static properties:Settings.Default}}"
+                                         
+                                         Title="Artist" />
+                            <xcdg:Column FieldName="Album"
+                                         Visible="{Binding tkAlbum, Source={x:Static properties:Settings.Default}}"
+                                         GroupValueTemplate="{StaticResource artistDataTemplate}"
+                                         Title="Album" />
+
+                            <xcdg:Column FieldName="Rate"
+                                         Visible="{Binding tkRatings, Source={x:Static properties:Settings.Default}}"
+                                         Width="65"
+                                         Title="Favourite"
+                                         CellContentTemplate="{StaticResource favouriteDataTemplate}">
+
+                            </xcdg:Column>
+                            <xcdg:Column FieldName="Genre"
+                                         Visible="{Binding tkGenre, Source={x:Static properties:Settings.Default}}"
+                                         Title="Genre" />
+
+                            <xcdg:Column FieldName="Bitrate"
+                                         Visible="{Binding tkBitrate, Source={x:Static properties:Settings.Default}}"
+                                         Title="Bitrate" />
+                        </xcdg:DataGridControl.Columns>
+                    </xcdg:DataGridControl>
+                </Grid>
+            </Custom1:MetroTabItem>
+            <Custom1:MetroTabItem Header="&#xEE5D; Artists" Custom1:ControlsHelper.HeaderFontSize="15.7"
+                                  FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Margin="0"
+                                  HorizontalAlignment="Left" Width="106" Height="0">
+
+                <Grid>
+                    <library:ArtistList x:Name="artistList" />
+                </Grid>
+            </Custom1:MetroTabItem>
+            <Custom1:MetroTabItem Header="&#xEC70; Albums" Custom1:ControlsHelper.HeaderFontSize="15.7"
+                                  FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Margin="0"
+                                  HorizontalAlignment="Left" Width="106" Height="0">
+                <Grid>
+                    <library:AlbumList x:Name="albumLst" d:LayoutOverrides="HorizontalMargin" Width="Auto" />
+                </Grid>
+            </Custom1:MetroTabItem>
+            <Custom1:MetroTabItem Header="&#xE86A; Genres" Custom1:ControlsHelper.HeaderFontSize="15.7"
+                                  FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" Margin="0"
+                                  HorizontalAlignment="Left" Width="106" Height="0">
+                <Grid>
+                    <library:GenreList x:Name="genreLst" Width="Auto" />
+                </Grid>
+            </Custom1:MetroTabItem>
+        </Custom1:MetroTabControl>
+        <Grid x:Name="grdDD" Margin="165,0,0,0" VerticalAlignment="Center" Height="173" Visibility="Hidden">
+            <TextBlock Foreground="{DynamicResource BlackBrush}" HorizontalAlignment="Center" Height="44"
+                       Margin="0,63.45,0,0" TextWrapping="Wrap" Text="Drag and drop some songs!"
+                       VerticalAlignment="Center" />
+            <TextBlock Foreground="{DynamicResource BlackBrush}" HorizontalAlignment="Center" Margin="0,0,14,67"
+                       TextWrapping="Wrap" Text="&#xEEC6;" VerticalAlignment="Center" FontSize="64"
+                       FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" />
+        </Grid>
+        <Grid x:Name="Container" Margin="165,-1.332,0,0" />
+        <Border HorizontalAlignment="Left" Width="165" BorderBrush="{StaticResource GrayBrush2}"
+                BorderThickness="0,0,2,0" Visibility="Visible">
+            <TreeView x:Name="plugTree" Margin="0" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" />
+        </Border>
+
+    </Grid>
+</UserControl>

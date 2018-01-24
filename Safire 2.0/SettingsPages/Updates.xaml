@@ -1,0 +1,48 @@
+﻿<settingsPages:SkinnedPage
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:settingsPages="clr-namespace:Safire.SettingsPages"
+      xmlns:Safire_Properties="clr-namespace:Safire.Properties" xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Safire.SettingsPages.Updates"
+      mc:Ignorable="d"
+  	  Title="AppearanceBackground" d:DesignWidth="623" d:DesignHeight="461"  >
+	<Grid>
+		<Grid.Resources>
+			<ResourceDictionary>
+				<ResourceDictionary.MergedDictionaries>
+					<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+ 
+				</ResourceDictionary.MergedDictionaries>
+
+			</ResourceDictionary>
+		</Grid.Resources>
+
+		<StackPanel Margin="8,36.999,268.167,128.568" Orientation="Vertical">
+			<Border BorderBrush="{DynamicResource TextB}" VerticalAlignment="Top" BorderThickness="0,0,0,1" Height="46">
+				<TextBlock Foreground="{DynamicResource TextB}"  Margin="0,0,0,12.433" TextWrapping="Wrap" Text="Customize the updates you receive. It is recommended to turn on automatic updates." Height="51"/>
+			</Border>
+
+			<Border BorderBrush="{DynamicResource TextB}" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0" Height="42.186">
+				<Grid Margin="0">
+					<Custom:ToggleSwitch Foreground="{DynamicResource TextB}" HorizontalAlignment="Right" Margin="0,0,32,2" VerticalAlignment="Center" Width="107.2" IsChecked="{Binding checkUpdates, Source={x:Static Safire_Properties:Settings.Default}}"/>
+					<TextBlock Foreground="{DynamicResource TextB}" Margin="8,0,0,0" TextWrapping="Wrap" Text="Automatically check for updates" Width="208.833" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+				</Grid>
+			</Border>
+			<Border BorderBrush="{DynamicResource TextB}" VerticalAlignment="Top" BorderThickness="0,0,0,1" Margin="0" Height="42.186">
+				<Grid Margin="0,0,0,-1">
+					<Custom:ToggleSwitch Foreground="{DynamicResource TextB}" HorizontalAlignment="Right" Margin="0,0,32,2" VerticalAlignment="Center" Width="107.2" IsChecked="{Binding GetAlbumArt, Source={x:Static Safire_Properties:Settings.Default}}" Visibility="Hidden"/>
+					<TextBlock Foreground="{DynamicResource TextB}" Margin="8,0,0,0" TextWrapping="Wrap" Text="Check for updates now !" Width="208.833" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+					<Button Content="Update" HorizontalAlignment="Right" Height="31" Margin="0,5.593,37,5.593" VerticalAlignment="Center" Width="102.2" Click="Button_Click"  />
+				</Grid>
+			</Border>
+			<TextBlock x:Name="currentVersion" Foreground="{DynamicResource TextB}" HorizontalAlignment="Left" Margin="8,5,0,0" TextWrapping="Wrap" Text="Current update details:"/>
+		</StackPanel>
+		<StackPanel HorizontalAlignment="Left" Height="41.999" Margin="8,8,0,0" Orientation="Horizontal" VerticalAlignment="Top">
+			<TextBlock x:Name="d" Foreground="{DynamicResource TextB}" Margin="0" TextWrapping="Wrap" Text="&#xEAD2;" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="26.667" d:LayoutOverrides="Height" VerticalAlignment="Top"/>
+			<TextBlock Foreground="{DynamicResource TextB}" Margin="8,0,0,0" TextWrapping="Wrap" Text="Updates" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs" FontSize="21.333" d:LayoutOverrides="Height" VerticalAlignment="Top"/>
+        
+		</StackPanel>
+
+	</Grid>
+</settingsPages:SkinnedPage>

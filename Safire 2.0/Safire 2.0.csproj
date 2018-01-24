@@ -1,0 +1,597 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3C7145E7-F8CC-4D9F-B3E9-9015E56BB016}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Safire</RootNamespace>
+    <AssemblyName>Safire 2.0</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\S2\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>DAEE724BBB995B47E468E763AF4458FB53A43079</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Safire 2.0_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Bass.Net">
+      <HintPath>F:\DESHANALAHAKOON\Deshan\Deshan Alahakoon\Documents\Visual Studio 2012\Projects\Safire 2.0\Safire 2.0\bin\Debug\Bass.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Lpfm.LastFmScrobbler">
+      <HintPath>F:\DESHANALAHAKOON\Deshan\Deshan Alahakoon\Documents\Visual Studio 2012\Projects\Safire 2.0\Safire 2.0\bin\Debug\Lpfm.LastFmScrobbler.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=0.14.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MahApps.Metro-master\MahApps.Metro\bin\Debug\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro.Resources">
+      <HintPath>E:\Docs\Visual Studio 2013\Projects\StartMenu\StartMenu\bin\Debug\MahApps.Metro.Resources.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="taglib-sharp">
+      <HintPath>F:\DESHANALAHAKOON\Deshan\Deshan Alahakoon\Documents\Visual Studio 2012\Projects\Safire 2.0\Safire 2.0\bin\Debug\taglib-sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.DataGrid, Version=2.3.14503.0, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Deshan\Pictures\New folder\Xceed.Wpf.DataGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=2.3.14503.0, Culture=neutral, PublicKeyToken=ba83ff368b7563c6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Deshan\Pictures\New folder\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Controls\AbstractControlExtensions.cs" />
+    <Compile Include="Controls\AnimatedTile.xaml.cs">
+      <DependentUpon>AnimatedTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Fingerprint.xaml.cs">
+      <DependentUpon>Fingerprint.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TrackMenu.xaml.cs">
+      <DependentUpon>TrackMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TooggleTile.xaml.cs">
+      <DependentUpon>TooggleTile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\IEnumerableExtensions.cs" />
+    <Compile Include="Core\Services\TopArtists\Artists.cs" />
+    <Compile Include="Core\Services\TopArtists\Attr.cs" />
+    <Compile Include="Core\Services\TopArtists\Deserializer.cs" />
+    <Compile Include="Core\Services\TopArtists\Image.cs" />
+    <Compile Include="Core\Services\TopArtists\LFMDev.cs" />
+    <Compile Include="Core\Services\TopArtists\Rootobject.cs" />
+    <Compile Include="Core\Updater\Definition.cs" />
+    <Compile Include="Core\Updater\Util.cs" />
+    <Compile Include="Fx\FxModels\Booster.cs" />
+    <Compile Include="Fx\FxModels\Suite.cs" />
+    <Compile Include="Fx\FxModels\Util.cs" />
+    <Compile Include="Library\Adder\AdderPlugin.cs" />
+    <Compile Include="Library\Adder\SearchProgress.xaml.cs">
+      <DependentUpon>SearchProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Core\LB_DragDropAutomation.cs" />
+    <Compile Include="Library\Core\DGV_DragDropAutomation.cs" />
+    <Compile Include="Controls\Image.cs" />
+    <Compile Include="Controls\Interactive\TilePanel.cs" />
+    <Compile Include="Controls\VirtualizingTilePanel.cs" />
+    <Compile Include="Controls\WebImage.xaml.cs">
+      <DependentUpon>WebImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\ColorConverter.cs" />
+    <Compile Include="Core\Connectivity.cs" />
+    <Compile Include="Core\ImageDownloader.cs" />
+    <Compile Include="Core\LastFm.cs" />
+    <Compile Include="Core\Playlists\Manager.cs" />
+    <Compile Include="Core\Plugins\PluginCore.cs" />
+    <Compile Include="Core\SecondsToTimeConverter.cs" />
+    <Compile Include="Core\SupportSkinner.cs" />
+    <Compile Include="Core\Threading.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Services\User.cs" />
+    <Compile Include="Fx\FxHolder.cs" />
+    <Compile Include="Fx\UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GUIs\Blinkies\ImageViewer.cs" />
+    <Compile Include="Library\ArtistList.xaml.cs">
+      <DependentUpon>ArtistList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\AlbumList.xaml.cs">
+      <DependentUpon>AlbumList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Core\DragDropProcessor.cs" />
+    <Compile Include="Library\Core\Main.cs" />
+    <Compile Include="Library\Core\SingleInstance.cs" />
+    <Compile Include="Library\Core\UpdateListens.cs" />
+    <Compile Include="Library\Cycling\RecentSongs.cs" />
+    <Compile Include="Library\GenreList.xaml.cs">
+      <DependentUpon>GenreList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Cycling\Cycler.cs" />
+    <Compile Include="Library\Cycling\Cycling.cs" />
+    <Compile Include="Library\Imaging\ImageConverter.cs" />
+    <Compile Include="Library\Imaging\ImageVisibility.cs" />
+    <Compile Include="Library\MyLibraryPlugin.cs" />
+    <Compile Include="Library\ObservableCollection\GenreViewModel.cs" />
+    <Compile Include="Library\Plugins\PluginManger.cs" />
+    <Compile Include="Library\Queries\GenreQuery.cs" />
+    <Compile Include="Library\RateControl.cs" />
+    <Compile Include="Library\SearchResults.xaml.cs">
+      <DependentUpon>SearchResults.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\TableModels\Fx.cs" />
+    <Compile Include="Library\TableModels\Playlist.cs" />
+    <Compile Include="Library\ViewModels\GenreViewModel.cs" />
+    <Compile Include="Library\Window1.xaml.cs">
+      <DependentUpon>Window1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Advanced.xaml.cs">
+      <DependentUpon>Advanced.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Cross_fade.xaml.cs">
+      <DependentUpon>Cross_fade.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Updates.xaml.cs">
+      <DependentUpon>Updates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Play_Screen.xaml.cs">
+      <DependentUpon>Play_Screen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\default.xaml.cs">
+      <DependentUpon>default.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\File_Types.xaml.cs">
+      <DependentUpon>File_Types.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Psycho_Acoustic.xaml.cs">
+      <DependentUpon>Psycho_Acoustic.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Media_Content.xaml.cs">
+      <DependentUpon>Media_Content.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Library.xaml.cs">
+      <DependentUpon>Library.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Scrobbler.xaml.cs">
+      <DependentUpon>Scrobbler.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\Filters.xaml.cs">
+      <DependentUpon>Filters.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\SettingsWindow.xaml.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\background.xaml.cs">
+      <DependentUpon>background.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsPages\SkinnedPage.cs" />
+    <Compile Include="SettingsPages\Themes.xaml.cs">
+      <DependentUpon>Themes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SQLite\AsyncTableQuery.cs" />
+    <Compile Include="SQLite\AutoIncrementAttribute.cs" />
+    <Compile Include="SQLite\BaseTableQuery.cs" />
+    <Compile Include="SQLite\CollationAttribute.cs" />
+    <Compile Include="SQLite\ColumnAttribute.cs" />
+    <Compile Include="SQLite\CreateTablesResult.cs" />
+    <Compile Include="SQLite\IgnoreAttribute.cs" />
+    <Compile Include="SQLite\IndexedAttribute.cs" />
+    <Compile Include="SQLite\LockManager.cs" />
+    <Compile Include="SQLite\MaxLengthAttribute.cs" />
+    <Compile Include="SQLite\Orm.cs" />
+    <Compile Include="SQLite\PreparedSqlLiteInsertCommand.cs" />
+    <Compile Include="SQLite\PrimaryKeyAttribute.cs" />
+    <Compile Include="SQLite\SQLiteException.cs" />
+    <Compile Include="SQLite\SQLite3.cs" />
+    <Compile Include="SQLite\SQLiteAsyncConnection.cs" />
+    <Compile Include="Controls\Interactive\FluidLink.xaml.cs">
+      <DependentUpon>FluidLink.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Interactive\SortableListView.cs" />
+    <Compile Include="Controls\VirtualizingWrapPanel.cs" />
+    <Compile Include="Controls\Window\UserRequest.xaml.cs">
+      <DependentUpon>UserRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\TaglibCore.cs" />
+    <Compile Include="Core\Thumbnail.cs" />
+    <Compile Include="Library\Adder\LibraryAdder.cs" />
+    <Compile Include="Library\Imaging\Bitmap.cs" />
+    <Compile Include="Library\Library.xaml.cs">
+      <DependentUpon>Library.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Library\ObservableCollection\AlbumsViewModel.cs" />
+    <Compile Include="Library\ObservableCollection\ArtistsViewModel.cs" />
+    <Compile Include="Library\ObservableCollection\Results.cs" />
+    <Compile Include="Library\ObservableCollection\SearchPackage.cs" />
+    <Compile Include="Library\ObservableCollection\SearchType.cs" />
+    <Compile Include="Library\ObservableCollection\TracksViewModel.cs" />
+    <Compile Include="Library\Queries\AlbumQuery.cs" />
+    <Compile Include="Library\Queries\ArtistQuery.cs" />
+    <Compile Include="Library\Queries\SOFilter.cs" />
+    <Compile Include="Library\ViewModels\ArtistViewModel.cs" />
+    <Compile Include="Library\ViewModels\AlbumViewModel.cs" />
+    <Compile Include="Library\ViewModels\TrackViewModel.cs" />
+    <Compile Include="Library\TableModels\Album.cs" />
+    <Compile Include="Library\TableModels\Artist.cs" />
+    <Compile Include="Library\TableModels\Genre.cs" />
+    <Compile Include="Library\TableModels\Track.cs" />
+    <Compile Include="Library\ViewModels\ViewModelBase.cs" />
+    <Compile Include="Library\Queries\TrackQuery.cs" />
+    <Compile Include="SQLite\SQLiteCommand.cs" />
+    <Compile Include="SQLite\SQLiteConnection.cs" />
+    <Compile Include="SQLite\SQLiteConnectionPool.cs" />
+    <Compile Include="SQLite\SQLiteConnectionString.cs" />
+    <Compile Include="SQLite\SQLiteConnectionWithLock.cs" />
+    <Compile Include="SQLite\SQLiteOpenFlags.cs" />
+    <Compile Include="SQLite\TableAttribute.cs" />
+    <Compile Include="SQLite\TableMapping.cs" />
+    <Compile Include="SQLite\TableQuery.cs" />
+    <Compile Include="SQLite\UniqueAttribute.cs" />
+    <Compile Include="Views\Artworks.cs" />
+    <Compile Include="Views\MainWindowUiMode.cs" />
+    <Compile Include="Views\EnumerationsContainer.cs" />
+    <Compile Include="Views\LibraryUiMode.cs" />
+    <Compile Include="GUIs\Blinkies\StandByFSBlinky.cs" />
+    <Compile Include="Views\Themes.cs" />
+    <Compile Include="Wizards\Welcome.xaml.cs">
+      <DependentUpon>Welcome.xaml</DependentUpon>
+    </Compile>
+    <Resource Include="icon.ico" />
+    <Content Include="Resources\Unknown.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Page Include="Controls\AnimatedTile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\Fingerprint.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\TrackMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Interactive\FluidLink.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\PlayerControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\TooggleTile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WebImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Window\UserRequest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fx\UserControl1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\Adder\SearchProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Library\ArtistList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\AlbumList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\GenreList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\Library.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\LibraryListTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\SearchResults.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Library\Window1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Animation\Colors.cs" />
+    <Compile Include="Animation\Extensions.cs" />
+    <Compile Include="Animation\Modes.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controls\LiveTile.cs" />
+    <Compile Include="Controls\PlayerControl.xaml.cs">
+      <DependentUpon>PlayerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Core\DispatcherExtensions.cs" />
+    <Compile Include="Core\SerialData.cs" />
+    <Compile Include="Core\CoreMain.cs" />
+    <Compile Include="Library\TableModels\Tables.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resources\PlaylistStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Advanced.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Cross_fade.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Updates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Play_Screen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\default.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\File_Types.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Psycho_Acoustic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Media_Content.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Library.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Scrobbler.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\Filters.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingsPages\SettingsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Resources\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Expander.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Content Include="Resources\TransBlackAccent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Page Include="SettingsPages\background.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SettingsPages\Themes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Wizards\Welcome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="Resources\ArknetGlyphs.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <All>True</All>
+      <AutoFill>True</AutoFill>
+    </Resource>
+    <Resource Include="Resources\Entypo.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Avina\Kornea.csproj">
+      <Project>{f9defdf9-cdd2-44bd-a1c0-4a99286d224a}</Project>
+      <Name>Kornea</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bridge\Bridge.csproj">
+      <Project>{4a1af146-40f1-4269-ab98-694b31115767}</Project>
+      <Name>Bridge</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Library\DataModel\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Expression\Blend\.NETFramework\v4.0\Microsoft.Expression.Blend.WPF.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

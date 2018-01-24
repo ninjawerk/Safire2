@@ -1,0 +1,11 @@
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\obj\Release\Kornea.Audio.Reactor.ReactorList.resources
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\obj\Release\Kornea.csproj.GenerateResource.Cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\bin\Release\libvlc.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\bin\Release\libvlccore.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\bin\Release\Kornea.dll.config
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\bin\Release\Kornea.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\bin\Release\Kornea.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\bin\Release\Bass.Net.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\obj\Release\Kornea.csprojResolveAssemblyReference.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\obj\Release\Kornea.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Avina\obj\Release\Kornea.pdb

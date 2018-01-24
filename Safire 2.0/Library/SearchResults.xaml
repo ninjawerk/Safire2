@@ -1,0 +1,34 @@
+﻿<UserControl
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	x:Class="Safire.SearchResults"
+	x:Name="UserControl"
+	d:DesignWidth="640" d:DesignHeight="480">
+
+	<Grid x:Name="LayoutRoot">
+		<StackPanel Margin="0,12,0,0" Orientation="Horizontal" d:LayoutOverrides="Width" HorizontalAlignment="Center" VerticalAlignment="Center">
+			<StackPanel Orientation="Vertical" Width="160" d:LayoutOverrides="Height">
+				<Button x:Name="btnArtist" Height="160"
+					VerticalAlignment="Bottom" Style="{DynamicResource MetroCircleButtonStyle}" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+					Content="" HorizontalAlignment="Right" Width="160" FontSize="100" Click="btnArtist_Click"/>
+				<TextBlock x:Name="artists" Height="28" Margin="22.32,9,26,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalAlignment="Center" FontSize="18.667"/>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" d:LayoutOverrides="Height" Width="160" Margin="45,0,0,0">
+				<Button x:Name="btnSongs" Height="160"
+					VerticalAlignment="Bottom" Style="{DynamicResource MetroCircleButtonStyle}" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+					Content="" HorizontalAlignment="Right" Width="160" FontSize="100" Click="btnSongs_Click"/>
+				<TextBlock x:Name="songs" Height="28" Margin="29,9,19.32,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalAlignment="Center" FontSize="18.667"/>
+			</StackPanel>
+			<StackPanel Orientation="Vertical" Width="160" d:LayoutOverrides="Height" Margin="45,0,0,0">
+				<Button x:Name="btnAlbums" Height="160"
+					VerticalAlignment="Bottom" Style="{DynamicResource MetroCircleButtonStyle}" FontFamily="/Safire 2.0;component/Resources/#ArknetGlyphs"
+					Content="" HorizontalAlignment="Right" Width="160" FontSize="86.667" Click="btnAlbums_Click"/>
+				<TextBlock x:Name="albums" Height="28" Margin="28,9,20.32,0" TextWrapping="Wrap" Text="0" TextAlignment="Center" HorizontalAlignment="Center" FontSize="18.667"/>
+			</StackPanel>
+		</StackPanel>
+		<TextBlock x:Name="search" HorizontalAlignment="Left" Margin="9,13.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="26.667" FontFamily="Segoe UI Light" Text="Search results for &quot;Deshan&quot;"/>
+	</Grid>
+</UserControl>

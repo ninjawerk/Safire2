@@ -1,0 +1,18 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Custom="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Safire.Library.Adder.SearchProgress" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="{DynamicResource WhiteBrush}">
+        <StackPanel HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center">
+            <Custom:ProgressRing x:Name="ring" Height="50" Margin="0"   HorizontalAlignment="Center" Width="43"   IsActive="True"/>
+            <TextBlock x:Name="tb1" HorizontalAlignment="Center" Margin="0,14,0,0" TextWrapping="Wrap" Text="adding songs to the library"/>
+            <TextBlock x:Name="tbTrack" HorizontalAlignment="Center" Margin="0,14,0,0" TextWrapping="Wrap" Text="trackname" FontWeight="Bold" TextAlignment="Center"/>
+            <Button x:Name="btnCancel" Content="Cancel" Height="28" Margin="0,35,0,0" HorizontalAlignment="Center" Width="58" Click="btnCancel_Click"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<ResourceDictionary
+
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Microsoft_Expression_Framework_Controls="clr-namespace:Microsoft.Expression.Framework.Controls;assembly=Microsoft.Expression.Framework">
+	<!-- Resource dictionary entries should be defined here. -->
+	<DataTemplate x:Key="PlaylistCombo">
+                 <TextBlock Height="18" TextWrapping="WrapWithOverflow" Text="{Binding Name}" Width="143" Foreground="White" TextTrimming="CharacterEllipsis" FontFamily="Segoe UI Semilight" Margin="0" VerticalAlignment="Stretch" Canvas.Left="8" Canvas.Top="151" HorizontalAlignment="Center" FontSize="13.333"/>
+        </DataTemplate>
+		  <ControlTemplate x:Key="DetailedTemplate" TargetType="{x:Type ContentControl}">  
+      <Grid> 
+        <Rectangle x:Name="background" RadiusX="9" RadiusY="9" Fill="Pink" /> 
+        <StackPanel> 
+          <TextBlock Margin="3,3,3,0" Text="{Binding  ID}" /> 
+          <TextBlock Margin="3,0,3,7" Text="{Binding Name}" /> 
+        </StackPanel> 
+      </Grid> 
+      <ControlTemplate.Triggers> 
+        <DataTrigger Binding="{Binding Name}" Value="M">  
+          <Setter Property="Fill" Value="LightBlue" TargetName="background"/>  
+        </DataTrigger> 
+      </ControlTemplate.Triggers>
+ </ControlTemplate>
+		 
+</ResourceDictionary>

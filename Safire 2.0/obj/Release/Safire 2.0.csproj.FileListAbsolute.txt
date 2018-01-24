@@ -1,0 +1,116 @@
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Safire 2.0.exe.config
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.csproj.App.config
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.csprojResolveAssemblyReference.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\AnimatedTile.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\Interactive\FluidLink.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\PlayerControl.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\TooggleTile.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\WebImage.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\Window\UserRequest.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\Adder\SearchProgress.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\SearchResults.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Resources\PlaylistStyles.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\SettingsWindow.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Resources\Colors.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Resources\Expander.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Simple Styles.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\App.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\AnimatedTile.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\Interactive\FluidLink.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\PlayerControl.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\TooggleTile.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\WebImage.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Controls\Window\UserRequest.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Fx\UserControl1.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\Adder\SearchProgress.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\ArtistList.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\AlbumList.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\GenreList.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\Library.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\SearchResults.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\Window1.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Advanced.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Cross_fade.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Updates.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Play_Screen.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\default.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\File_Types.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Psycho_Acoustic.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Media_Content.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Library.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Scrobbler.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Filters.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\SettingsWindow.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\background.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Themes.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\App.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0_Content.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\GeneratedInternalTypeHelper.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0_MarkupCompile.cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0_MarkupCompile.lref
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Wizards\Welcome.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\MainWindow.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Wizards\Welcome.g.cs
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Resources\Unknown.png
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Resources\TransBlackAccent.xaml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\libvlc.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\libvlccore.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Safire 2.0.exe.manifest
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Safire 2.0.application
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Safire 2.0.exe
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Safire 2.0.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Bass.Net.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Bridge.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Kornea.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Lpfm.LastFmScrobbler.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\MahApps.Metro.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\MahApps.Metro.Resources.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Microsoft.Threading.Tasks.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Microsoft.Threading.Tasks.Extensions.Desktop.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Microsoft.Threading.Tasks.Extensions.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.IO.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.Runtime.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.Threading.Tasks.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\taglib-sharp.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Xceed.Wpf.DataGrid.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Xceed.Wpf.Toolkit.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.Windows.Interactivity.dll
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Kornea.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Bridge.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\MahApps.Metro.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\MahApps.Metro.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\MahApps.Metro.Resources.pdb
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Microsoft.Threading.Tasks.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Microsoft.Threading.Tasks.Extensions.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\Microsoft.Threading.Tasks.Extensions.Desktop.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.IO.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.Runtime.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\bin\Release\System.Threading.Tasks.xml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Fx\UserControl1.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\ArtistList.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\AlbumList.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\GenreList.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\Library.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\LibraryListTemplates.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Library\Window1.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\MainWindow.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Advanced.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Cross_fade.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Updates.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Play_Screen.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\default.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\File_Types.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Psycho_Acoustic.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Media_Content.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Library.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Scrobbler.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Filters.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\background.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\SettingsPages\Themes.baml
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.g.resources
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire.Properties.Resources.resources
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.csproj.GenerateResource.Cache
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.exe.manifest
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.application
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.exe
+E:\TurtleTheCat-leyon-6d17864ccb72\Safire 2.0\obj\Release\Safire 2.0.pdb
