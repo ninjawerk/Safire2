@@ -12,7 +12,9 @@ namespace Kornea.Audio.DSP
             k32Imports.init_3band_state(ref Eq,60, 8000, 44000);
 
         }
+	
         public EQSTATE Eq = new EQSTATE();
+	
         public unsafe override void DSPCallback(int handle, int channel, IntPtr buffer, int length, IntPtr user)
         {
         if (IsBypassed || Player.Instance.NetStreamingConfigsLoaded) return;
@@ -25,8 +27,6 @@ namespace Kornea.Audio.DSP
             }
         }
                   
-      
-
         public override string ToString()
         {
             throw new NotImplementedException();
