@@ -10,7 +10,6 @@ namespace Kornea.Audio.DSP
     }
 
     public class Filter
-
     {
         private readonly eBiQuadFilter typ;
         private float Cfreq;
