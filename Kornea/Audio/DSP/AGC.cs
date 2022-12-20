@@ -19,8 +19,6 @@ namespace Kornea.Audio.DSP
 			set { _manualGainFactor = value; }
 		}
 
-	
-
 		public  override unsafe void DSPCallback(int handle, int channel, IntPtr buffer, int length, IntPtr user)
 		{
 			if (IsBypassed || Player.Instance.NetStreamingConfigsLoaded)
